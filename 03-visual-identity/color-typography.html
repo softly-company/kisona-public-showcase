@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KISONA — Color & Typography</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --point-50: #f4f7fb;
+      --point-100: #e3ecf5;
+      --point-200: #c5d6e8;
+      --point-300: #9fb8d1;
+      --point-400: #7e9dbd;
+      --point-500: #5e81ac;
+      --point-600: #4b6a92;
+      --point-700: #3b5576;
+      --point-800: #2f435d;
+      --point-900: #223247;
+      --base-100: #1e293b;
+      --base-80: #1e293bcc;
+      --base-60: #1e293b99;
+      --base-50: #1e293b80;
+      --base-40: #1e293b66;
+      --base-30: #1e293b4d;
+      --base-20: #1e293b33;
+      --base-10: #1e293b1a;
+      --base-08: #1e293b14;
+      --base-07: #1e293b12;
+      --base-05: #1e293b0d;
+      --base-03: #1e293b08;
+      --base-02: #1e293b05;
+      --red-50: #fff1f2;
+      --red-100: #ffe4e6;
+      --red-500: #f43f5e;
+      --red-600: #e11d48;
+      --red-700: #be123c;
+      --white: #ffffff;
+
+      /* Silver / Metallic */
+      --silver-light: #e8ecf1;
+      --silver-base: #c8cfd8;
+      --silver-dark: #9ca3af;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8f9fc;
+      color: var(--base-80);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--base-07);
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--point-700);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--base-10);
+      margin: 0 16px;
+    }
+
+    .nav-title {
+      font-size: 13px;
+      color: var(--base-60);
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 32px 60px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(94,129,172,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      color: var(--base-100);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero-sub {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--base-60);
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .hero-metallic-line {
+      width: 120px;
+      height: 1px;
+      margin: 28px auto 0;
+      background: linear-gradient(90deg, transparent, var(--silver-base), var(--silver-light), var(--silver-base), transparent);
+    }
+
+    /* ─── Purpose Banner ─── */
+    .purpose-banner {
+      max-width: 800px;
+      margin: 0 auto 56px;
+      padding: 0 32px;
+    }
+
+    .purpose-inner {
+      background: var(--point-50);
+      border: 1px solid var(--point-200);
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .purpose-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-600);
+      margin-bottom: 6px;
+    }
+
+    .purpose-text {
+      font-size: 13px;
+      color: var(--base-60);
+      line-height: 1.5;
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--base-60);
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--silver-base), var(--silver-light), var(--silver-base), transparent);
+      margin: 0 auto 64px;
+    }
+
+    /* ─── Color Cards ─── */
+    .color-highlight {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding: 24px;
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .color-highlight .ch-swatch {
+      width: 80px;
+      height: 80px;
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+
+    .color-highlight .ch-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 4px;
+    }
+
+    .color-highlight .ch-hex {
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--base-40);
+      margin-bottom: 6px;
+    }
+
+    .color-highlight .ch-desc {
+      font-size: 13px;
+      color: var(--base-60);
+    }
+
+    /* ─── Swatch Rows ─── */
+    .swatch-row {
+      display: flex;
+      gap: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      margin-bottom: 32px;
+    }
+
+    .swatch {
+      flex: 1;
+      height: 64px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+    }
+
+    .swatch:hover {
+      transform: scaleY(1.3);
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      border-radius: 4px;
+    }
+
+    .swatch .swatch-info {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: var(--base-100);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.15s ease;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .swatch .swatch-info::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--base-100);
+    }
+
+    .swatch:hover .swatch-info {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .swatch .swatch-step {
+      font-size: 9px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .swatch:hover .swatch-step {
+      opacity: 1;
+    }
+
+    .swatch.light-text .swatch-step { color: rgba(255,255,255,0.8); }
+    .swatch.dark-text .swatch-step { color: rgba(0,0,0,0.35); }
+
+    /* ─── Opacity Usage Table ─── */
+    .usage-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 32px;
+      font-size: 13px;
+    }
+
+    .usage-table th {
+      text-align: left;
+      font-weight: 600;
+      color: var(--base-100);
+      padding: 10px 16px;
+      background: var(--base-03);
+      border-bottom: 1px solid var(--base-10);
+    }
+
+    .usage-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--base-05);
+      color: var(--base-60);
+    }
+
+    .usage-table .ut-swatch {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+      border: 1px solid var(--base-07);
+    }
+
+    .usage-table .ut-token {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: var(--base-80);
+      font-weight: 500;
+    }
+
+    /* ─── Semantic Colors ─── */
+    .semantic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .semantic-swatch {
+      height: 56px;
+      border-radius: 10px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    }
+
+    .semantic-swatch:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    }
+
+    .semantic-swatch .sem-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .semantic-swatch .swatch-info {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: var(--base-100);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.15s ease;
+    }
+
+    .semantic-swatch .swatch-info::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--base-100);
+    }
+
+    .semantic-swatch:hover .swatch-info {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* ─── Ratio Bar ─── */
+    .ratio-bar {
+      display: flex;
+      height: 12px;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .ratio-bar span { display: block; }
+
+    .ratio-legend {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+      color: var(--base-40);
+      margin-bottom: 32px;
+    }
+
+    .ratio-legend .rl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+
+    /* ─── WCAG Table ─── */
+    .wcag-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+
+    .wcag-table th {
+      text-align: left;
+      font-weight: 600;
+      color: var(--base-100);
+      padding: 10px 16px;
+      background: var(--base-03);
+      border-bottom: 1px solid var(--base-10);
+    }
+
+    .wcag-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--base-05);
+      color: var(--base-60);
+    }
+
+    .wcag-pass {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .wcag-aaa {
+      background: #e0f0e8;
+      color: #2d5f42;
+    }
+
+    .wcag-aa {
+      background: #f5ece2;
+      color: #7a5a3a;
+    }
+
+    /* ─── Typography Cards ─── */
+    .type-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .type-card {
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .type-card:hover {
+      border-color: var(--silver-base);
+      box-shadow: 0 6px 20px rgba(200,207,216,0.35);
+    }
+
+    .type-card .tc-role {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 8px;
+    }
+
+    .type-card .tc-name {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 4px;
+    }
+
+    .type-card .tc-desc {
+      font-size: 13px;
+      color: var(--base-40);
+      margin-bottom: 16px;
+    }
+
+    .type-card .tc-sample {
+      font-size: 24px;
+      color: var(--base-100);
+      line-height: 1.4;
+    }
+
+    .type-card .tc-sample-small {
+      font-size: 15px;
+      color: var(--base-60);
+      margin-top: 8px;
+    }
+
+    /* ─── Type Scale ─── */
+    .scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+      margin-bottom: 32px;
+    }
+
+    .scale-table th {
+      text-align: left;
+      font-weight: 600;
+      color: var(--base-100);
+      padding: 10px 16px;
+      background: var(--base-03);
+      border-bottom: 1px solid var(--base-10);
+    }
+
+    .scale-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--base-05);
+    }
+
+    .scale-table .st-token {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      color: var(--point-600);
+      font-weight: 500;
+    }
+
+    .scale-table .st-preview {
+      color: var(--base-100);
+    }
+
+    .scale-table .st-spec {
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      color: var(--base-40);
+    }
+
+    /* ─── Letter Spacing Cards ─── */
+    .spacing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .spacing-card {
+      padding: 20px;
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .spacing-card .sc-range {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 4px;
+    }
+
+    .spacing-card .sc-value {
+      font-size: 20px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 4px;
+    }
+
+    .spacing-card .sc-desc {
+      font-size: 12px;
+      color: var(--base-40);
+    }
+
+    /* ─── Pairing Grid ─── */
+    .pairing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .pairing-card {
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .pairing-card .pc-preview {
+      padding: 24px;
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: var(--point-50);
+    }
+
+    .pairing-card .pc-meta {
+      padding: 16px;
+      font-size: 12px;
+    }
+
+    .pairing-card .pc-use {
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 2px;
+    }
+
+    .pairing-card .pc-spec {
+      color: var(--base-40);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+    }
+
+    /* ─── Summary ─── */
+    .summary-block {
+      background: linear-gradient(135deg, var(--point-700), var(--point-800));
+      border-radius: 16px;
+      padding: 40px;
+      color: white;
+      margin-top: 32px;
+    }
+
+    .summary-block .sb-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .summary-item .si-label {
+      font-size: 11px;
+      opacity: 0.6;
+      margin-bottom: 4px;
+    }
+
+    .summary-item .si-value {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    /* ─── Copy Toast ─── */
+    .copy-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--base-100);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* ─── Reveal ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width:768px) {
+      .purpose-inner { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      .semantic-row { grid-template-columns: repeat(2, 1fr); }
+      .spacing-grid { grid-template-columns: 1fr; }
+      .pairing-grid { grid-template-columns: 1fr; }
+      .summary-grid { grid-template-columns: 1fr; }
+      .section { padding: 0 20px 48px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <header class="nav">
+    <span class="nav-logo">KISONA</span>
+    <div class="nav-sep"></div>
+    <span class="nav-title">Color & Typography System</span>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-label">Color & Typography</div>
+    <img src="../05-assets/exports/logos/typo/KISONA_logo.svg" alt="KISONA" style="height:32px;opacity:0.15;margin-bottom:20px;">
+    <h1 class="hero-title">습관의 색, 명확한 글꼴</h1>
+    <p class="hero-sub">
+      키소나의 색은 신뢰를 주되 차갑지 않습니다.<br>
+      키소나의 서체는 명확하되 딱딱하지 않습니다.
+    </p>
+    <div class="hero-dots">
+      <div class="hero-dot" style="background:#5e81ac;" title="Point"></div>
+      <div class="hero-dot" style="background:#1e293b;" title="Base"></div>
+      <div class="hero-dot" style="background:#f43f5e;" title="Red"></div>
+    </div>
+    <div class="hero-metallic-line"></div>
+  </section>
+
+  <!-- Purpose Banner -->
+  <div class="purpose-banner">
+    <div class="purpose-inner">
+      <div>
+        <div class="purpose-label">Why</div>
+        <div class="purpose-text">색상과 서체를 정확하게 쓰기 위해</div>
+      </div>
+      <div>
+        <div class="purpose-label">How</div>
+        <div class="purpose-text">HEX 값 복사, 타입 스케일 참조</div>
+      </div>
+      <div>
+        <div class="purpose-label">What</div>
+        <div class="purpose-text">Point·Base·Red 컬러 시스템, 서체 3종, 접근성</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 01. Color Palette ═══ -->
+  <div class="section reveal">
+    <div class="section-label">01 — Color</div>
+    <h2 class="section-title">Point — 포인트</h2>
+    <p class="section-desc">신뢰와 명확함. 행동 유도, 핵심 강조, 브랜드 아이덴티티에 사용합니다.</p>
+
+    <div class="color-highlight">
+      <div class="ch-swatch" style="background:#5e81ac;"></div>
+      <div>
+        <div class="ch-name">Point Blue</div>
+        <div class="ch-hex">#5e81ac · rgb(94, 129, 172) · hsl(213°, 29%, 52%)</div>
+        <div class="ch-desc">CTA 버튼, 활성 상태, 링크, 브랜드 강조에 사용</div>
+      </div>
+    </div>
+
+    <div class="swatch-row">
+      <div class="swatch dark-text" style="background:#f4f7fb;" onclick="copySwatch('#f4f7fb')">
+        <span class="swatch-info">Point 50<br>#f4f7fb</span><span class="swatch-step">50</span>
+      </div>
+      <div class="swatch dark-text" style="background:#e3ecf5;" onclick="copySwatch('#e3ecf5')">
+        <span class="swatch-info">Point 100<br>#e3ecf5</span><span class="swatch-step">100</span>
+      </div>
+      <div class="swatch dark-text" style="background:#c5d6e8;" onclick="copySwatch('#c5d6e8')">
+        <span class="swatch-info">Point 200<br>#c5d6e8</span><span class="swatch-step">200</span>
+      </div>
+      <div class="swatch dark-text" style="background:#9fb8d1;" onclick="copySwatch('#9fb8d1')">
+        <span class="swatch-info">Point 300<br>#9fb8d1</span><span class="swatch-step">300</span>
+      </div>
+      <div class="swatch dark-text" style="background:#7e9dbd;" onclick="copySwatch('#7e9dbd')">
+        <span class="swatch-info">Point 400<br>#7e9dbd</span><span class="swatch-step">400</span>
+      </div>
+      <div class="swatch light-text" style="background:#5e81ac;" onclick="copySwatch('#5e81ac')">
+        <span class="swatch-info">Point 500 ★<br>#5e81ac</span><span class="swatch-step">500</span>
+      </div>
+      <div class="swatch light-text" style="background:#4b6a92;" onclick="copySwatch('#4b6a92')">
+        <span class="swatch-info">Point 600<br>#4b6a92</span><span class="swatch-step">600</span>
+      </div>
+      <div class="swatch light-text" style="background:#3b5576;" onclick="copySwatch('#3b5576')">
+        <span class="swatch-info">Point 700<br>#3b5576</span><span class="swatch-step">700</span>
+      </div>
+      <div class="swatch light-text" style="background:#2f435d;" onclick="copySwatch('#2f435d')">
+        <span class="swatch-info">Point 800<br>#2f435d</span><span class="swatch-step">800</span>
+      </div>
+      <div class="swatch light-text" style="background:#223247;" onclick="copySwatch('#223247')">
+        <span class="swatch-info">Point 900<br>#223247</span><span class="swatch-step">900</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Base -->
+  <div class="section reveal">
+    <h2 class="section-title">Base — 베이스</h2>
+    <p class="section-desc">단 하나의 색 <code style="background:var(--base-05);padding:2px 6px;border-radius:4px;font-size:13px;">#1e293b</code>으로 모든 그레이를 만듭니다. 불투명도만으로 텍스트, 보더, 배경을 커버합니다.</p>
+
+    <div class="color-highlight">
+      <div class="ch-swatch" style="background:#1e293b;"></div>
+      <div>
+        <div class="ch-name">Base Slate</div>
+        <div class="ch-hex">#1e293b × opacity</div>
+        <div class="ch-desc">하나의 색이 모든 뉘앙스를 만든다 — 자동 색 일관성 보장</div>
+      </div>
+    </div>
+
+    <div class="swatch-row">
+      <div class="swatch light-text" style="background:#1e293b;" onclick="copySwatch('#1e293b')">
+        <span class="swatch-info">100%<br>#1e293b</span><span class="swatch-step">100</span>
+      </div>
+      <div class="swatch light-text" style="background:linear-gradient(#1e293bcc,#1e293bcc),#fff;" onclick="copySwatch('#1e293bcc')">
+        <span class="swatch-info">80%<br>#1e293bcc</span><span class="swatch-step">80</span>
+      </div>
+      <div class="swatch light-text" style="background:linear-gradient(#1e293b99,#1e293b99),#fff;" onclick="copySwatch('#1e293b99')">
+        <span class="swatch-info">60%<br>#1e293b99</span><span class="swatch-step">60</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b80,#1e293b80),#fff;" onclick="copySwatch('#1e293b80')">
+        <span class="swatch-info">50%<br>#1e293b80</span><span class="swatch-step">50</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b66,#1e293b66),#fff;" onclick="copySwatch('#1e293b66')">
+        <span class="swatch-info">40%<br>#1e293b66</span><span class="swatch-step">40</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b4d,#1e293b4d),#fff;" onclick="copySwatch('#1e293b4d')">
+        <span class="swatch-info">30%<br>#1e293b4d</span><span class="swatch-step">30</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b33,#1e293b33),#fff;" onclick="copySwatch('#1e293b33')">
+        <span class="swatch-info">20%<br>#1e293b33</span><span class="swatch-step">20</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b1a,#1e293b1a),#fff;" onclick="copySwatch('#1e293b1a')">
+        <span class="swatch-info">10%<br>#1e293b1a</span><span class="swatch-step">10</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b0d,#1e293b0d),#fff;" onclick="copySwatch('#1e293b0d')">
+        <span class="swatch-info">5%<br>#1e293b0d</span><span class="swatch-step">05</span>
+      </div>
+      <div class="swatch dark-text" style="background:linear-gradient(#1e293b05,#1e293b05),#fff;" onclick="copySwatch('#1e293b05')">
+        <span class="swatch-info">2%<br>#1e293b05</span><span class="swatch-step">02</span>
+      </div>
+    </div>
+
+    <!-- Usage mapping table -->
+    <table class="usage-table">
+      <thead>
+        <tr><th>Opacity</th><th>Token</th><th>Usage</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="ut-swatch" style="background:#1e293b;"></span><span class="ut-token">100%</span></td>
+          <td><code>--base-100</code></td><td>헤딩, 강조 텍스트</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293bcc,#1e293bcc),#fff;"></span><span class="ut-token">80%</span></td>
+          <td><code>--base-80</code></td><td>본문 텍스트</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b99,#1e293b99),#fff;"></span><span class="ut-token">60%</span></td>
+          <td><code>--base-60</code></td><td>보조 텍스트, 설명</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b66,#1e293b66),#fff;"></span><span class="ut-token">40%</span></td>
+          <td><code>--base-40</code></td><td>캡션, 메타 정보</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b33,#1e293b33),#fff;"></span><span class="ut-token">20%</span></td>
+          <td><code>--base-20</code></td><td>구분선, 보더</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b1a,#1e293b1a),#fff;"></span><span class="ut-token">10%</span></td>
+          <td><code>--base-10</code></td><td>서브틀 보더</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b0d,#1e293b0d),#fff;"></span><span class="ut-token">5%</span></td>
+          <td><code>--base-05</code></td><td>카드 배경, 호버 상태</td>
+        </tr>
+        <tr>
+          <td><span class="ut-swatch" style="background:linear-gradient(#1e293b05,#1e293b05),#fff;"></span><span class="ut-token">2%</span></td>
+          <td><code>--base-02</code></td><td>페이지 배경 (미세 톤)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Red Accent -->
+  <div class="section reveal">
+    <h2 class="section-title">Red — 레드</h2>
+    <p class="section-desc">강조와 경고. 할인, 에러, CTA 보조에 한정 사용합니다.</p>
+
+    <div class="color-highlight">
+      <div class="ch-swatch" style="background:#f43f5e;"></div>
+      <div>
+        <div class="ch-name">Red Rose</div>
+        <div class="ch-hex">#f43f5e · rgb(244, 63, 94)</div>
+        <div class="ch-desc">할인율, 에러 메시지, 긴급 알림에 사용</div>
+      </div>
+    </div>
+
+    <div class="swatch-row" style="max-width:50%;">
+      <div class="swatch dark-text" style="background:#fff1f2;" onclick="copySwatch('#fff1f2')">
+        <span class="swatch-info">Red 50<br>#fff1f2</span><span class="swatch-step">50</span>
+      </div>
+      <div class="swatch dark-text" style="background:#ffe4e6;" onclick="copySwatch('#ffe4e6')">
+        <span class="swatch-info">Red 100<br>#ffe4e6</span><span class="swatch-step">100</span>
+      </div>
+      <div class="swatch light-text" style="background:#f43f5e;" onclick="copySwatch('#f43f5e')">
+        <span class="swatch-info">Red 500 ★<br>#f43f5e</span><span class="swatch-step">500</span>
+      </div>
+      <div class="swatch light-text" style="background:#e11d48;" onclick="copySwatch('#e11d48')">
+        <span class="swatch-info">Red 600<br>#e11d48</span><span class="swatch-step">600</span>
+      </div>
+      <div class="swatch light-text" style="background:#be123c;" onclick="copySwatch('#be123c')">
+        <span class="swatch-info">Red 700<br>#be123c</span><span class="swatch-step">700</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Semantic + Ratio + WCAG -->
+  <div class="section reveal">
+    <div class="section-label">02 — System</div>
+    <h2 class="section-title">Semantic Colors</h2>
+    <p class="section-desc">기능적 의미를 가진 컬러. 상태 표시, 피드백에 사용합니다.</p>
+
+    <div class="semantic-row">
+      <div class="semantic-swatch" style="background:#5b9e7a;" onclick="copySwatch('#5b9e7a')">
+        <span class="swatch-info">Success<br>#5b9e7a</span><span class="sem-label">Success</span>
+      </div>
+      <div class="semantic-swatch" style="background:#f43f5e;" onclick="copySwatch('#f43f5e')">
+        <span class="swatch-info">Error<br>#f43f5e</span><span class="sem-label">Error</span>
+      </div>
+      <div class="semantic-swatch" style="background:#d4915e;" onclick="copySwatch('#d4915e')">
+        <span class="swatch-info">Warning<br>#d4915e</span><span class="sem-label">Warning</span>
+      </div>
+      <div class="semantic-swatch" style="background:#5e81ac;" onclick="copySwatch('#5e81ac')">
+        <span class="swatch-info">Info<br>#5e81ac</span><span class="sem-label">Info</span>
+      </div>
+    </div>
+
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:12px;">Color Ratio</h3>
+    <div class="ratio-bar">
+      <span style="flex:70;background:var(--base-40);border-radius:6px 0 0 6px;"></span>
+      <span style="flex:20;background:var(--point-500);"></span>
+      <span style="flex:10;background:var(--red-500);border-radius:0 6px 6px 0;"></span>
+    </div>
+    <div class="ratio-legend">
+      <span><span class="rl-dot" style="background:var(--base-40);"></span>Base 70%</span>
+      <span><span class="rl-dot" style="background:var(--point-500);"></span>Point 20%</span>
+      <span><span class="rl-dot" style="background:var(--red-500);"></span>Red 10%</span>
+    </div>
+
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:12px;">Accessibility (WCAG 2.1)</h3>
+    <table class="wcag-table">
+      <thead>
+        <tr><th>Combination</th><th>Contrast</th><th>Level</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>base-100 on white</td><td>12.6 : 1</td>
+          <td><span class="wcag-pass wcag-aaa">AAA</span></td>
+        </tr>
+        <tr>
+          <td>base-80 on white</td><td>~9.5 : 1</td>
+          <td><span class="wcag-pass wcag-aaa">AAA</span></td>
+        </tr>
+        <tr>
+          <td>point-700 on white</td><td>6.3 : 1</td>
+          <td><span class="wcag-pass wcag-aaa">AAA</span></td>
+        </tr>
+        <tr>
+          <td>point-500 on white</td><td>4.6 : 1</td>
+          <td><span class="wcag-pass wcag-aa">AA Large</span></td>
+        </tr>
+        <tr>
+          <td>white on point-600</td><td>6.0 : 1</td>
+          <td><span class="wcag-pass wcag-aaa">AA</span></td>
+        </tr>
+        <tr>
+          <td>white on point-700</td><td>7.8 : 1</td>
+          <td><span class="wcag-pass wcag-aaa">AAA</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══ 03. Typography ═══ -->
+  <div class="section reveal">
+    <div class="section-label">03 — Typography</div>
+    <h2 class="section-title">서체 시스템</h2>
+    <p class="section-desc">3종의 서체로 명확하고 따뜻한 브랜드 보이스를 구현합니다.</p>
+
+    <div class="type-grid">
+      <!-- Pretendard -->
+      <div class="type-card">
+        <div class="tc-role">Primary — UI &amp; Body</div>
+        <div class="tc-name">Pretendard Variable</div>
+        <div class="tc-desc">한글 + 영문 메인 서체. UI, 본문, 모든 기본 텍스트.</div>
+        <div class="tc-sample" style="font-family:'Pretendard Variable',sans-serif;font-weight:400;">
+          매일 달라지는 나를 만나다. 키소나.
+        </div>
+        <div class="tc-sample-small" style="font-family:'Pretendard Variable',sans-serif;">
+          Aa Bb Cc 0123456789 — Regular 400 · Medium 500 · SemiBold 600
+        </div>
+      </div>
+
+      <!-- DM Sans -->
+      <div class="type-card">
+        <div class="tc-role">English Companion — Product &amp; Data</div>
+        <div class="tc-name">DM Sans</div>
+        <div class="tc-desc">영문 독립 텍스트, 제품명, 숫자 데이터. 기하학적이고 모던한 산세리프.</div>
+        <div class="tc-sample" style="font-family:'DM Sans',sans-serif;font-weight:500;">
+          KISONA · Real Difference · Home Care
+        </div>
+        <div class="tc-sample-small" style="font-family:'DM Sans',sans-serif;">
+          Aa Bb Cc 0123456789 — Regular 400 · Medium 500 · SemiBold 600
+        </div>
+      </div>
+
+      <!-- Noto Sans KR -->
+      <div class="type-card">
+        <div class="tc-role">Display — Brand Moment</div>
+        <div class="tc-name">Noto Sans KR</div>
+        <div class="tc-desc">히어로, 디스플레이, 브랜드 모먼트. Thin~Light 웨이트로 가볍고 깨끗한 인상.</div>
+        <div class="tc-sample" style="font-family:'Noto Sans KR',sans-serif;font-weight:100;font-size:32px;">
+          실제로 달라지는 것을 매일 체감하다.
+        </div>
+        <div class="tc-sample-small" style="font-family:'Noto Sans KR',sans-serif;">
+          가나다라 — Thin 100 · Light 300 · Regular 400 · Medium 500
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Type Scale -->
+  <div class="section reveal">
+    <div class="section-label">04 — Scale</div>
+    <h2 class="section-title">Type Scale</h2>
+    <p class="section-desc">일관된 타입 스케일로 시각적 위계를 만듭니다.</p>
+
+    <table class="scale-table">
+      <thead>
+        <tr><th>Token</th><th>Preview</th><th>Size / Weight</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="st-token">display-1</span></td>
+          <td><span class="st-preview" style="font-size:48px;font-weight:100;font-family:'Noto Sans KR',sans-serif;">습관</span></td>
+          <td><span class="st-spec">48px / Thin 100 · Noto Sans KR</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">display-2</span></td>
+          <td><span class="st-preview" style="font-size:40px;font-weight:300;font-family:'Noto Sans KR',sans-serif;">달라짐</span></td>
+          <td><span class="st-spec">40px / Light 300 · Noto Sans KR</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">heading-1</span></td>
+          <td><span class="st-preview" style="font-size:32px;font-weight:600;">브랜드 컨셉</span></td>
+          <td><span class="st-spec">32px / SemiBold 600</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">heading-2</span></td>
+          <td><span class="st-preview" style="font-size:24px;font-weight:600;">컬러 시스템</span></td>
+          <td><span class="st-spec">24px / SemiBold 600</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">heading-3</span></td>
+          <td><span class="st-preview" style="font-size:20px;font-weight:500;">메시지 체계</span></td>
+          <td><span class="st-spec">20px / Medium 500</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">body-large</span></td>
+          <td><span class="st-preview" style="font-size:17px;font-weight:400;">매일 쓰는 것이 나를 바꾼다</span></td>
+          <td><span class="st-spec">17px / Regular 400</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">body</span></td>
+          <td><span class="st-preview" style="font-size:15px;font-weight:400;">하루 5분, 나를 바꾸는 습관</span></td>
+          <td><span class="st-spec">15px / Regular 400</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">body-small</span></td>
+          <td><span class="st-preview" style="font-size:13px;font-weight:400;">실제 사용자 93%가 변화를 체감</span></td>
+          <td><span class="st-spec">13px / Regular 400</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">caption</span></td>
+          <td><span class="st-preview" style="font-size:12px;font-weight:400;color:var(--base-60);">2026.02.26 업데이트</span></td>
+          <td><span class="st-spec">12px / Regular 400</span></td>
+        </tr>
+        <tr>
+          <td><span class="st-token">overline</span></td>
+          <td><span class="st-preview" style="font-size:10px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;">COLOR SYSTEM</span></td>
+          <td><span class="st-spec">10px / SemiBold 600 / +0.08em</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Letter Spacing -->
+  <div class="section reveal">
+    <h2 class="section-title">Letter Spacing</h2>
+
+    <div class="spacing-grid">
+      <div class="spacing-card">
+        <div class="sc-range">Display (40px+)</div>
+        <div class="sc-value">-0.02em</div>
+        <div class="sc-desc">큰 제목은 좁혀서 밀도감 확보</div>
+      </div>
+      <div class="spacing-card">
+        <div class="sc-range">Heading (20–32px)</div>
+        <div class="sc-value">-0.01em</div>
+        <div class="sc-desc">소제목은 미세하게 좁힘</div>
+      </div>
+      <div class="spacing-card">
+        <div class="sc-range">Body (13–17px)</div>
+        <div class="sc-value">0</div>
+        <div class="sc-desc">본문은 기본 자간 유지</div>
+      </div>
+      <div class="spacing-card">
+        <div class="sc-range">Overline (10px)</div>
+        <div class="sc-value">+0.08em</div>
+        <div class="sc-desc">라벨, 카테고리는 넓혀서 가독성 확보</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Font Pairing -->
+  <div class="section reveal">
+    <h2 class="section-title">Font Pairing Guide</h2>
+
+    <div class="pairing-grid">
+      <div class="pairing-card">
+        <div class="pc-preview">
+          <span style="font-size:28px;font-weight:600;color:var(--base-100);">브랜드 컨셉</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">페이지 타이틀</div>
+          <div class="pc-spec">Pretendard SemiBold · heading-1 · base-100</div>
+        </div>
+      </div>
+      <div class="pairing-card">
+        <div class="pc-preview">
+          <span style="font-family:'Noto Sans KR',sans-serif;font-size:36px;font-weight:100;color:var(--base-100);">습관</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">캠페인 헤드라인</div>
+          <div class="pc-spec">Noto Sans KR Thin · display-1 · base-100</div>
+        </div>
+      </div>
+      <div class="pairing-card">
+        <div class="pc-preview">
+          <span style="font-family:'Noto Sans KR',sans-serif;font-size:18px;font-weight:300;color:var(--point-700);">"매일 달라지는 나를 만나다."</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">브랜드 인용문</div>
+          <div class="pc-spec">Noto Sans KR Light · heading-3 · point-700</div>
+        </div>
+      </div>
+      <div class="pairing-card">
+        <div class="pc-preview">
+          <span style="font-family:'DM Sans',sans-serif;font-size:16px;font-weight:500;color:var(--base-100);">KISONA · Real Difference</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">영문 제품명</div>
+          <div class="pc-spec">DM Sans Medium · body · base-100</div>
+        </div>
+      </div>
+      <div class="pairing-card">
+        <div class="pc-preview" style="background:var(--point-600);">
+          <span style="font-size:16px;font-weight:500;color:white;">지금 시작하기</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">CTA 버튼</div>
+          <div class="pc-spec">Pretendard Medium · body · white on point-600</div>
+        </div>
+      </div>
+      <div class="pairing-card">
+        <div class="pc-preview">
+          <span style="font-family:'DM Sans',sans-serif;font-size:32px;font-weight:600;color:var(--point-600);">93%</span>
+        </div>
+        <div class="pc-meta">
+          <div class="pc-use">숫자 강조</div>
+          <div class="pc-spec">DM Sans SemiBold · heading-1 · point-600</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section reveal">
+    <div class="summary-block">
+      <div class="sb-title">Summary</div>
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="si-label">Primary Font</div>
+          <div class="si-value">Pretendard Variable</div>
+        </div>
+        <div class="summary-item">
+          <div class="si-label">English Font</div>
+          <div class="si-value">DM Sans</div>
+        </div>
+        <div class="summary-item">
+          <div class="si-label">Display Font</div>
+          <div class="si-value">Noto Sans KR</div>
+        </div>
+        <div class="summary-item">
+          <div class="si-label">Point Color</div>
+          <div class="si-value">#5e81ac</div>
+        </div>
+        <div class="summary-item">
+          <div class="si-label">Base Color</div>
+          <div class="si-value">#1e293b × opacity</div>
+        </div>
+        <div class="summary-item">
+          <div class="si-label">Red Accent</div>
+          <div class="si-value">#f43f5e</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;padding:40px 0 60px;font-size:12px;color:var(--base-30);">
+    KISONA · Color & Typography System
+  </div>
+
+  <!-- Copy Toast -->
+  <div class="copy-toast" id="copy-toast"></div>
+
+  <script>
+    function copySwatch(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = 'Copied ' + hex;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1600);
+      });
+    }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>

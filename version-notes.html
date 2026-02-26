@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KISONA — Version Notes</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --point-50: #f4f7fb;
+      --point-100: #e3ecf5;
+      --point-200: #c5d6e8;
+      --point-300: #9fb8d1;
+      --point-400: #7e9dbd;
+      --point-500: #5e81ac;
+      --point-600: #4b6a92;
+      --point-700: #3b5576;
+      --point-800: #2f435d;
+      --point-900: #223247;
+      --base-100: #1e293b;
+      --base-80: #1e293bcc;
+      --base-60: #1e293b99;
+      --base-50: #1e293b80;
+      --base-40: #1e293b66;
+      --base-30: #1e293b4d;
+      --base-20: #1e293b33;
+      --base-10: #1e293b1a;
+      --base-08: #1e293b14;
+      --base-07: #1e293b12;
+      --base-05: #1e293b0d;
+      --base-03: #1e293b08;
+      --base-02: #1e293b05;
+      --white: #ffffff;
+
+      /* Silver / Metallic */
+      --silver-light: #e8ecf1;
+      --silver-base: #c8cfd8;
+      --silver-dark: #9ca3af;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8f9fc;
+      color: var(--base-80);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 24px 80px;
+    }
+
+    /* ─── Page Header ─── */
+    .page-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 12px;
+    }
+
+    .page-title {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--base-100);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .page-desc {
+      font-size: 15px;
+      color: var(--base-60);
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+
+    .ver-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: var(--point-50);
+      border: 1px solid var(--point-200);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--point-700);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 40px;
+    }
+
+    .ver-badge .ver-date {
+      color: var(--base-40);
+      font-weight: 400;
+    }
+
+    /* ─── Purpose Banner ─── */
+    .purpose-banner {
+      margin-bottom: 48px;
+    }
+
+    .purpose-inner {
+      background: var(--point-50);
+      border: 1px solid var(--point-200);
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .purpose-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-600);
+      margin-bottom: 6px;
+    }
+
+    .purpose-text {
+      font-size: 13px;
+      color: var(--base-60);
+      line-height: 1.5;
+    }
+
+    /* ─── Timeline ─── */
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 0;
+      width: 1px;
+      background: var(--base-10);
+    }
+
+    .tl-item {
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .tl-dot {
+      position: absolute;
+      left: -28px;
+      top: 6px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--point-400);
+      background: var(--white);
+    }
+
+    .tl-item:first-child .tl-dot {
+      background: var(--point-600);
+      border-color: var(--point-600);
+    }
+
+    .tl-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tl-ver {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--base-100);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .tl-date {
+      font-size: 13px;
+      color: var(--base-40);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .tl-tag {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .tl-tag-latest {
+      background: var(--point-50);
+      color: var(--point-700);
+      border: 1px solid var(--point-200);
+    }
+
+    .tl-tag-major {
+      background: var(--point-100);
+      color: var(--point-600);
+    }
+
+    .tl-section {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--base-80);
+      margin-bottom: 8px;
+    }
+
+    .tl-list {
+      list-style: none;
+    }
+
+    .tl-list li {
+      font-size: 14px;
+      color: var(--base-60);
+      padding: 3px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .tl-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--base-20);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width:600px) {
+      .purpose-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .page-title {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="page-label">Version History</div>
+    <h1 class="page-title">Version Notes</h1>
+    <p class="page-desc">키소나 브랜드 시스템의 변경 이력을 기록합니다.</p>
+    <div class="ver-badge">
+      v1.6 <span class="ver-date">2026.02.26</span>
+    </div>
+
+    <!-- Purpose Banner -->
+    <div class="purpose-banner">
+      <div class="purpose-inner">
+        <div class="purpose-col">
+          <div class="purpose-label">Why</div>
+          <div class="purpose-text">시스템 변경 이력을 추적하기 위해</div>
+        </div>
+        <div class="purpose-col">
+          <div class="purpose-label">How</div>
+          <div class="purpose-text">업데이트 내용 확인</div>
+        </div>
+        <div class="purpose-col">
+          <div class="purpose-label">What</div>
+          <div class="purpose-text">버전별 변경사항 타임라인</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="timeline">
+      <!-- v1.6 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.6</span>
+          <span class="tl-date">2026.02.26</span>
+          <span class="tl-tag tl-tag-latest">Latest</span>
+        </div>
+        <div class="tl-section">이미지 12장 추가 반영 + Public Showcase 배포</div>
+        <ul class="tl-list">
+          <li>Beauty Device 이미지 8장 추가 — 초음파 스크러버, 아이케어, 고주파 페이셜/멀티존, 복합식 페이셜/포터블</li>
+          <li>Ampoule & Package 이미지 4장 추가 — 두피 앰플, 앰플 세트, 디바이스 패키지</li>
+          <li>Prompt Guide 갤러리: Beauty Device 10→18, Ampoule & Package 갤러리 신설(4)</li>
+          <li>Snaps 총 31장으로 확장 — Ampoule 필터 추가</li>
+          <li>kisona-public-showcase 공개 레포 생성 및 배포</li>
+        </ul>
+      </div>
+
+      <!-- v1.5.1 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.5.1</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">모바일 상단 네비 + Beauty Device 이미지 10장 반영</div>
+        <ul class="tl-list">
+          <li>Prompt Guide 모바일에서 사이드 네비 → 상단 수평 스크롤 네비로 변경했습니다</li>
+          <li>Beauty Device 생성 이미지 10장을 Prompt Guide 갤러리와 Snaps에 반영했습니다</li>
+          <li>Snaps에 Beauty Device 섹션을 추가했습니다 — 총 19장으로 확장</li>
+          <li>모바일 반응형 최적화 — Purpose Banner, Hero, 갤러리 그리드 조정</li>
+        </ul>
+      </div>
+
+      <!-- v1.5 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.5</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">Beauty Device 확장 + Ampoule & Package 카테고리 추가</div>
+        <ul class="tl-list">
+          <li>Home 웰컴 화면에 KISONA BI 로고를 추가했습니다</li>
+          <li>Beauty Device에 초음파(스크러버/아이케어), 고주파(글로브/프로브), 복합식(올인원/포터블) 6개 프롬프트를 추가했습니다</li>
+          <li>Ampoule & Package 카테고리를 신설했습니다 — 두피 앰플, 피부 앰플(시린지), 앰플 세트, 디바이스 패키지 4종</li>
+          <li>프롬프트 총 35개 (7카테고리)로 확장했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.4 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.4</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">BI 히어로 반영 + Beauty Device 프롬프트 10개 + 이미지 추가</div>
+        <ul class="tl-list">
+          <li>모든 HTML 히어로 섹션에 KISONA BI 로고를 반영했습니다 (opacity 0.15)</li>
+          <li>Beauty Device 카테고리를 추가했습니다 — LED 마스크, 갈바닉, 미세전류, 초음파, RF, 아이 마사저, 스캘프, 피부 분석, 넥 리프팅, EMS 10종</li>
+          <li>새로 생성된 이미지 2장(Silver Mesh Woven Metal, 스킨케어 디바이스 — 실버 페블)을 Prompt Guide 갤러리와 Snaps에 반영했습니다</li>
+          <li>Snaps에서 삭제된 Gemini 이미지를 제거하고 IoT Device 섹션을 추가했습니다</li>
+          <li>프롬프트 총 25개 (6카테고리), Snaps 총 9장으로 확장했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.3.1 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.3.1</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">Snaps 갤러리 + Prompt Guide 이미지 연결</div>
+        <ul class="tl-list">
+          <li>Snaps 페이지를 새로 만들었습니다 — 생성된 이미지 8장을 카테고리별로 브라우징</li>
+          <li>Prompt Guide에 Generated Examples 갤러리를 추가했습니다 — 라이트박스 포함</li>
+          <li>사이드바에 Snaps 네비게이션 링크를 추가했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.3 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.3</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">Midjourney v7 프롬프트 가이드 신설</div>
+        <ul class="tl-list">
+          <li>Prompt Guide 페이지를 새로 만들었습니다 — Silver x Muted Blue 소재 중심</li>
+          <li>5개 카테고리(Texture / Lifestyle / Product / IoT Device / Campaign)에 15개 프롬프트를 구성했습니다</li>
+          <li>IoT Device 카테고리를 추가했습니다 — 메탈릭 피부 홈케어 디바이스 컨셉 5종</li>
+          <li>프롬프트 복사, Usage Guide, v7 Tips, Prompt Formula 레퍼런스를 포함했습니다</li>
+          <li>사이드바에 Prompt Guide 네비게이션 링크를 추가했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.2 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.2</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">KISONA 전용 폰트 시스템 + Semantic Colors 리뉴얼</div>
+        <ul class="tl-list">
+          <li>디스플레이 서체를 Noto Serif KR(세리프) → Noto Sans KR Thin(산세리프)으로 교체했습니다</li>
+          <li>영문 서체를 Inter → DM Sans로 교체했습니다 — 기하학적이고 모던한 인상</li>
+          <li>히어로 "습관" 텍스트를 weight 100(Thin)으로 변경하여 가볍고 깨끗한 느낌을 만들었습니다</li>
+          <li>Semantic Colors를 뮤트 팔레트에 맞게 조정했습니다 — Success #5b9e7a, Warning #d4915e</li>
+          <li>타이포그래피 카드, 타입 스케일, 폰트 페어링 가이드를 전면 재작성했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.1 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.1</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">카드 가시성 강화 + Silver 소재 도입</div>
+        <ul class="tl-list">
+          <li>모든 카드 요소에 white 배경 + box-shadow를 추가하여 #f8f9fc 배경 위 가시성을 확보했습니다</li>
+          <li>Silver 컬러 토큰(--silver-light, --silver-base, --silver-dark)을 전체 시스템에 도입했습니다</li>
+          <li>디바이더를 메탈릭 그라데이션 라인으로 교체했습니다</li>
+          <li>히어로 섹션에 메탈릭 악센트 라인을 추가했습니다</li>
+          <li>카드 호버 시 실버 톤 섀도우로 프리미엄 느낌을 강화했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.0.2 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.0.2</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">배경색 소프트닝</div>
+        <ul class="tl-list">
+          <li>전체 페이지 배경을 순백(#fff)에서 소프트 블루그레이(#f8f9fc)로 변경했습니다</li>
+          <li>카드·사이드바는 화이트 유지하여 콘텐츠 레이어 구분을 강화했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.0.1 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.0.1</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">Point 컬러 톤다운</div>
+        <ul class="tl-list">
+          <li>Point 컬러를 Muted Blue (#5e81ac)로 교체했습니다 — 채도를 낮춰 눈에 편안한 톤</li>
+          <li>전체 4개 페이지의 컬러 팔레트를 동기화했습니다</li>
+        </ul>
+      </div>
+
+      <!-- v1.0 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v1.0</span>
+          <span class="tl-date">2026.02.26</span>
+          <span class="tl-tag tl-tag-major">Major</span>
+        </div>
+        <div class="tl-section">초기 브랜드 시스템 구축</div>
+        <ul class="tl-list">
+          <li>Brand System Hub를 배포했습니다 — 사이드바 + iframe 기반 SPA</li>
+          <li>Brand Concept 페이지를 만들었습니다 — 습관 · 달라짐 에센스, 메시지 체계, 버벌 아이덴티티</li>
+          <li>Color & Typography 페이지를 만들었습니다 — Point(Blue) · Base(Slate) · Red 3토큰 컬러 시스템 + 서체 3종</li>
+          <li>Version Notes 페이지를 만들었습니다</li>
+        </ul>
+      </div>
+
+      <!-- v0.1 -->
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-header">
+          <span class="tl-ver">v0.1</span>
+          <span class="tl-date">2026.02.26</span>
+        </div>
+        <div class="tl-section">프로젝트 시작</div>
+        <ul class="tl-list">
+          <li>키소나 브랜드 어플리케이션 시스템을 처음 만들었습니다</li>
+          <li>폴더 구조를 설정했습니다</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

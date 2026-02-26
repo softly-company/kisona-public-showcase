@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KISONA — Brand Concept</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --point-50: #f4f7fb;
+      --point-100: #e3ecf5;
+      --point-200: #c5d6e8;
+      --point-300: #9fb8d1;
+      --point-400: #7e9dbd;
+      --point-500: #5e81ac;
+      --point-600: #4b6a92;
+      --point-700: #3b5576;
+      --point-800: #2f435d;
+      --point-900: #223247;
+      --base-100: #1e293b;
+      --base-80: #1e293bcc;
+      --base-60: #1e293b99;
+      --base-50: #1e293b80;
+      --base-40: #1e293b66;
+      --base-30: #1e293b4d;
+      --base-20: #1e293b33;
+      --base-10: #1e293b1a;
+      --base-08: #1e293b14;
+      --base-07: #1e293b12;
+      --base-05: #1e293b0d;
+      --base-03: #1e293b08;
+      --base-02: #1e293b05;
+      --red-50: #fff1f2;
+      --red-500: #f43f5e;
+      --red-600: #e11d48;
+      --white: #ffffff;
+
+      /* Silver / Metallic */
+      --silver-light: #e8ecf1;
+      --silver-base: #c8cfd8;
+      --silver-dark: #9ca3af;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8f9fc;
+      color: var(--base-80);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ─── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      padding: 0 32px;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--base-07);
+    }
+
+    .nav-logo {
+      font-weight: 700;
+      font-size: 15px;
+      color: var(--point-700);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-sep {
+      width: 1px;
+      height: 16px;
+      background: var(--base-10);
+      margin: 0 16px;
+    }
+
+    .nav-title {
+      font-size: 13px;
+      color: var(--base-60);
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 32px 60px;
+      position: relative;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 40%, rgba(94,129,172,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 24px;
+    }
+
+    .hero-word {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: clamp(60px, 12vw, 120px);
+      font-weight: 100;
+      color: var(--base-100);
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      font-weight: 300;
+      color: var(--base-60);
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    .hero-tag {
+      margin-top: 32px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      color: var(--base-30);
+      letter-spacing: 0.04em;
+    }
+
+    .hero-metallic-line {
+      width: 120px;
+      height: 1px;
+      margin: 28px auto 0;
+      background: linear-gradient(90deg, transparent, var(--silver-base), var(--silver-light), var(--silver-base), transparent);
+    }
+
+    /* ─── Purpose Banner ─── */
+    .purpose-banner {
+      max-width: 800px;
+      margin: 0 auto 56px;
+      padding: 0 32px;
+    }
+
+    .purpose-inner {
+      background: var(--point-50);
+      border: 1px solid var(--point-200);
+      border-radius: 12px;
+      padding: 24px 32px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .purpose-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-600);
+      margin-bottom: 6px;
+    }
+
+    .purpose-text {
+      font-size: 13px;
+      color: var(--base-60);
+      line-height: 1.5;
+    }
+
+    /* ─── Sections ─── */
+    .section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px 64px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--base-60);
+      margin-bottom: 32px;
+      max-width: 560px;
+    }
+
+    .divider {
+      width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--silver-base), var(--silver-light), var(--silver-base), transparent);
+      margin: 0 auto 64px;
+    }
+
+    /* ─── Journey Flow ─── */
+    .journey-flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .journey-step {
+      flex: 1;
+      min-width: 140px;
+      text-align: center;
+      padding: 24px 16px;
+      border-radius: 12px;
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .journey-step .js-num {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--base-30);
+      margin-bottom: 8px;
+    }
+
+    .journey-step .js-word {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--base-100);
+      margin-bottom: 8px;
+    }
+
+    .journey-step .js-desc {
+      font-size: 12px;
+      color: var(--base-60);
+      line-height: 1.5;
+    }
+
+    .journey-step.highlight {
+      background: var(--point-500);
+      border-color: var(--point-500);
+    }
+
+    .journey-step.highlight .js-num,
+    .journey-step.highlight .js-word,
+    .journey-step.highlight .js-desc {
+      color: white;
+    }
+
+    .journey-arrow {
+      font-size: 20px;
+      color: var(--base-20);
+      padding: 0 8px;
+      flex-shrink: 0;
+    }
+
+    /* ─── Rhythm Cards ─── */
+    .rhythm-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .rhythm-card {
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 16px;
+      padding: 28px 24px;
+      text-align: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .rhythm-card:hover {
+      border-color: var(--silver-base);
+      box-shadow: 0 6px 20px rgba(200,207,216,0.35);
+    }
+
+    .rhythm-card .rc-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .rhythm-card .rc-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 4px;
+    }
+
+    .rhythm-card .rc-emotion {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 8px;
+    }
+
+    .rhythm-card .rc-copy {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--base-60);
+      font-style: italic;
+    }
+
+    /* ─── Concept Architecture ─── */
+    .arch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .arch-card {
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 16px;
+      padding: 32px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .arch-card .ac-layer {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 8px;
+    }
+
+    .arch-card .ac-name {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 28px;
+      font-weight: 300;
+      color: var(--base-100);
+      margin-bottom: 16px;
+    }
+
+    .arch-card .ac-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--base-05);
+      font-size: 13px;
+    }
+
+    .arch-card .ac-row:last-child {
+      border-bottom: none;
+    }
+
+    .arch-card .ac-key {
+      color: var(--base-40);
+    }
+
+    .arch-card .ac-val {
+      color: var(--base-100);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    /* ─── Message Table ─── */
+    .msg-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+
+    .msg-table th {
+      text-align: left;
+      font-weight: 600;
+      color: var(--base-100);
+      padding: 12px 16px;
+      background: var(--base-03);
+      border-bottom: 1px solid var(--base-10);
+      font-size: 12px;
+    }
+
+    .msg-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--base-05);
+    }
+
+    .msg-table .mt-level {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--point-600);
+    }
+
+    .msg-table .mt-msg {
+      color: var(--base-100);
+      font-weight: 500;
+    }
+
+    .msg-table .mt-use {
+      color: var(--base-40);
+      font-size: 12px;
+    }
+
+    /* ─── Doubt → Response Map ─── */
+    .doubt-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .doubt-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: center;
+      padding: 16px 20px;
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .doubt-row .dr-q {
+      font-size: 14px;
+      color: var(--base-60);
+    }
+
+    .doubt-row .dr-arrow {
+      color: var(--point-400);
+      font-size: 18px;
+    }
+
+    .doubt-row .dr-a {
+      font-size: 14px;
+      color: var(--point-700);
+      font-weight: 500;
+    }
+
+    /* ─── Tone Spectrum ─── */
+    .tone-grid {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .tone-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .tone-row .tr-label {
+      width: 60px;
+      font-size: 12px;
+      color: var(--base-40);
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .tone-row .tr-bar {
+      flex: 1;
+      height: 6px;
+      background: var(--base-05);
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .tone-row .tr-dot {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 14px;
+      height: 14px;
+      background: var(--point-500);
+      border-radius: 50%;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    }
+
+    .tone-row .tr-label-end {
+      width: 60px;
+      font-size: 12px;
+      color: var(--base-40);
+      flex-shrink: 0;
+    }
+
+    /* ─── Pattern Cards ─── */
+    .pattern-grid {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .pattern-card {
+      background: var(--white);
+      border: 1px solid var(--base-10);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .pattern-card .pc-type {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 6px;
+    }
+
+    .pattern-card .pc-name {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin-bottom: 8px;
+    }
+
+    .pattern-card .pc-example {
+      font-size: 14px;
+      color: var(--base-60);
+      padding: 12px 16px;
+      background: var(--base-02);
+      border-radius: 8px;
+      border-left: 3px solid var(--point-300);
+      font-style: italic;
+    }
+
+    /* ─── Words Grid ─── */
+    .words-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .words-col {
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .words-col.words-do {
+      background: var(--point-50);
+      border: 1px solid var(--point-200);
+    }
+
+    .words-col.words-cond {
+      background: #f5ece2;
+      border: 1px solid #e8d5c0;
+    }
+
+    .words-col.words-dont {
+      background: var(--red-50);
+      border: 1px solid #fecdd3;
+    }
+
+    .words-col .wc-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .words-do .wc-title { color: var(--point-700); }
+    .words-cond .wc-title { color: #7a5a3a; }
+    .words-dont .wc-title { color: var(--red-600); }
+
+    .words-col .wc-list {
+      list-style: none;
+      font-size: 13px;
+    }
+
+    .words-col .wc-list li {
+      padding: 4px 0;
+      color: var(--base-80);
+    }
+
+    /* ─── Habit Loop ─── */
+    .habit-loop {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .habit-node {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 2px solid var(--silver-base);
+      background: var(--white);
+      box-shadow: 0 2px 8px rgba(200,207,216,0.25);
+    }
+
+    .habit-node .hn-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--point-500);
+      margin-bottom: 4px;
+    }
+
+    .habit-node .hn-text {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--base-100);
+    }
+
+    .habit-node.hn-reward {
+      border-color: var(--point-500);
+      background: var(--point-50);
+    }
+
+    .habit-connector {
+      font-size: 20px;
+      color: var(--base-20);
+      padding: 0 12px;
+    }
+
+    /* ─── Daily Rhythm Timeline ─── */
+    .daily-timeline {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 32px;
+    }
+
+    .daily-timeline::before {
+      content: '';
+      position: absolute;
+      left: 5px;
+      top: 8px;
+      bottom: 8px;
+      width: 1px;
+      background: var(--base-10);
+    }
+
+    .dt-item {
+      position: relative;
+      padding-bottom: 28px;
+    }
+
+    .dt-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .dt-dot {
+      position: absolute;
+      left: -28px;
+      top: 4px;
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 2px solid var(--point-400);
+      background: var(--white);
+    }
+
+    .dt-time {
+      font-size: 12px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      color: var(--point-600);
+      margin-bottom: 4px;
+    }
+
+    .dt-title {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--base-100);
+      margin-bottom: 2px;
+    }
+
+    .dt-desc {
+      font-size: 13px;
+      color: var(--base-60);
+    }
+
+    /* ─── Summary Block ─── */
+    .summary-block {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 32px 64px;
+    }
+
+    .summary-inner {
+      background: linear-gradient(135deg, var(--point-700), var(--point-800));
+      border-radius: 16px;
+      padding: 40px;
+      color: white;
+    }
+
+    .summary-inner .si-title {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0.7;
+      margin-bottom: 28px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    .summary-row:last-child {
+      border-bottom: none;
+    }
+
+    .summary-row .sr-key {
+      font-size: 13px;
+      opacity: 0.6;
+    }
+
+    .summary-row .sr-val {
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* ─── Footer ─── */
+    .footer {
+      text-align: center;
+      padding: 40px 0 60px;
+      font-size: 12px;
+      color: var(--base-30);
+    }
+
+    /* ─── Reveal ─── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width:768px) {
+      .purpose-inner { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
+      .rhythm-grid { grid-template-columns: 1fr; }
+      .arch-grid { grid-template-columns: 1fr; }
+      .words-grid { grid-template-columns: 1fr; }
+      .doubt-row { grid-template-columns: 1fr; gap: 8px; }
+      .doubt-row .dr-arrow { transform: rotate(90deg); justify-self: center; }
+      .journey-flow { flex-direction: column; }
+      .journey-arrow { transform: rotate(90deg); }
+      .section { padding: 0 20px 48px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Nav -->
+  <header class="nav">
+    <span class="nav-logo">KISONA</span>
+    <div class="nav-sep"></div>
+    <span class="nav-title">Brand Concept</span>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-label">Brand Concept</div>
+    <img src="../05-assets/exports/logos/typo/KISONA_logo.svg" alt="KISONA" style="height:32px;opacity:0.15;margin-bottom:20px;">
+    <div class="hero-word">습관</div>
+    <p class="hero-sub">
+      매일 쓰는 것이 나를 바꾼다.<br>
+      홈케어, 체감, 습관.
+    </p>
+    <div class="hero-tag">KISONA — Feel the real difference.</div>
+    <div class="hero-metallic-line"></div>
+  </section>
+
+  <!-- Purpose Banner -->
+  <div class="purpose-banner">
+    <div class="purpose-inner">
+      <div>
+        <div class="purpose-label">Why</div>
+        <div class="purpose-text">키소나가 어떤 브랜드인지 이해하기 위해</div>
+      </div>
+      <div>
+        <div class="purpose-label">How</div>
+        <div class="purpose-text">카피 작성, 기획 시 브랜드 방향 확인</div>
+      </div>
+      <div>
+        <div class="purpose-label">What</div>
+        <div class="purpose-text">에센스, 메시지 체계, 버벌 아이덴티티</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ 01. Brand Essence ═══ -->
+  <div class="section reveal">
+    <div class="section-label">01 — Brand Essence</div>
+    <h2 class="section-title">바꿈 없는 일상에서 달라지는 나로</h2>
+    <p class="section-desc">키소나는 정체된 일상에 '매일 체감하는 변화'를 만들어주는 홈케어 브랜드입니다. 거창한 약속이 아닌, 습관이 만드는 진짜 달라짐.</p>
+
+    <!-- Journey -->
+    <div class="journey-flow">
+      <div class="journey-step">
+        <div class="js-num">STEP 1</div>
+        <div class="js-word">멈춤</div>
+        <div class="js-desc">쓰고 있는데<br>달라지는 게 없다</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="js-num">STEP 2</div>
+        <div class="js-word">만남</div>
+        <div class="js-desc">매일 쓰고 싶게<br>만드는 제품</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step">
+        <div class="js-num">STEP 3</div>
+        <div class="js-word">습관</div>
+        <div class="js-desc">매일 하게 된다<br>체감이 시작된다</div>
+      </div>
+      <div class="journey-arrow">→</div>
+      <div class="journey-step highlight">
+        <div class="js-num">STEP 4</div>
+        <div class="js-word">달라짐</div>
+        <div class="js-desc">거울을 보면 다르다<br>진짜 달라졌다</div>
+      </div>
+    </div>
+
+    <!-- Daily Rhythm -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:16px;">일상의 리듬</h3>
+    <div class="rhythm-grid">
+      <div class="rhythm-card">
+        <div class="rc-icon">🌅</div>
+        <div class="rc-title">아침 루틴</div>
+        <div class="rc-emotion">시작</div>
+        <div class="rc-copy">"오늘도 한 번 더."</div>
+      </div>
+      <div class="rhythm-card">
+        <div class="rc-icon">🌙</div>
+        <div class="rc-title">저녁 루틴</div>
+        <div class="rc-emotion">케어</div>
+        <div class="rc-copy">"하루의 마무리를 피부로."</div>
+      </div>
+      <div class="rhythm-card">
+        <div class="rc-icon">✦</div>
+        <div class="rc-title">매일의 변화</div>
+        <div class="rc-emotion">체감</div>
+        <div class="rc-copy">"어제보다 오늘이 다르다."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Concept Architecture -->
+  <div class="section reveal">
+    <h2 class="section-title">Concept Architecture</h2>
+    <p class="section-desc">두 개의 레이어가 키소나의 세계를 구성합니다.</p>
+
+    <div class="arch-grid">
+      <div class="arch-card">
+        <div class="ac-layer">Layer 1 — Emotional Concept</div>
+        <div class="ac-name">습관</div>
+        <div class="ac-row"><span class="ac-key">존재 방식</span><span class="ac-val">매일 반복하고 싶은 경험</span></div>
+        <div class="ac-row"><span class="ac-key">태도</span><span class="ac-val">과장 없이 체감으로 증명</span></div>
+        <div class="ac-row"><span class="ac-key">여정</span><span class="ac-val">멈춤 → 만남 → 습관 → 달라짐</span></div>
+        <div class="ac-row"><span class="ac-key">관계</span><span class="ac-val">매일의 홈케어 파트너</span></div>
+      </div>
+      <div class="arch-card">
+        <div class="ac-layer">Layer 2 — Product Concept</div>
+        <div class="ac-name">Real Difference</div>
+        <div class="ac-row"><span class="ac-key">제품 철학</span><span class="ac-val">실제로 달라지는 것만 넣는다</span></div>
+        <div class="ac-row"><span class="ac-key">경쟁 전략</span><span class="ac-val">성분 · 사용감 · 루틴 편의성의 균형</span></div>
+        <div class="ac-row"><span class="ac-key">원칙</span><span class="ac-val">체감 가능한 변화만 약속</span></div>
+        <div class="ac-row"><span class="ac-key">검증</span><span class="ac-val">데이터 · 사용자 후기 · 숫자</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══ 02. Message ═══ -->
+  <div class="section reveal">
+    <div class="section-label">02 — Message</div>
+    <h2 class="section-title">메시지 체계</h2>
+    <p class="section-desc">상황에 맞는 레벨의 메시지를 사용합니다.</p>
+
+    <table class="msg-table">
+      <thead>
+        <tr><th>Level</th><th>Message</th><th>Usage</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="mt-level">L1. Essence</span></td>
+          <td><span class="mt-msg">매일 달라지는 나를 만나다</span></td>
+          <td><span class="mt-use">브랜드 슬로건</span></td>
+        </tr>
+        <tr>
+          <td><span class="mt-level">L2. Promise</span></td>
+          <td><span class="mt-msg">실제로 달라지는 것만 약속합니다</span></td>
+          <td><span class="mt-use">About, 브랜드 소개</span></td>
+        </tr>
+        <tr>
+          <td><span class="mt-level">L3. Product</span></td>
+          <td><span class="mt-msg">집에서, 매일, 진짜 달라지는 홈케어</span></td>
+          <td><span class="mt-use">제품 카테고리</span></td>
+        </tr>
+        <tr>
+          <td><span class="mt-level">L4. Routine</span></td>
+          <td><span class="mt-msg">하루 5분, 나를 바꾸는 습관</span></td>
+          <td><span class="mt-use">캠페인</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Doubt → Response -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:16px;">고객 의심 → 키소나 응답</h3>
+    <div class="doubt-grid">
+      <div class="doubt-row">
+        <div class="dr-q">"홈케어로 뭐가 달라져?"</div>
+        <div class="dr-arrow">→</div>
+        <div class="dr-a">"2주 만에 체감. 실제 사용자 93%가 변화를 느꼈습니다."</div>
+      </div>
+      <div class="doubt-row">
+        <div class="dr-q">"꾸준히 못 할 것 같아"</div>
+        <div class="dr-arrow">→</div>
+        <div class="dr-a">"하루 5분. 이것만 하면 됩니다."</div>
+      </div>
+      <div class="doubt-row">
+        <div class="dr-q">"비싼 거 아니야?"</div>
+        <div class="dr-arrow">→</div>
+        <div class="dr-a">"매일 쓰니까, 하루 ₩890원."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══ 03. Verbal Identity ═══ -->
+  <div class="section reveal">
+    <div class="section-label">03 — Verbal Identity</div>
+    <h2 class="section-title">담백한 확신</h2>
+    <p class="section-desc">키소나의 말투는 조용하지만 확신에 차 있습니다. 과장하지 않되 분명하게.</p>
+
+    <!-- Tone Spectrum -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:20px;">Tone Spectrum</h3>
+    <div class="tone-grid">
+      <div class="tone-row">
+        <span class="tr-label">격식</span>
+        <div class="tr-bar"><div class="tr-dot" style="left:45%;"></div></div>
+        <span class="tr-label-end">캐주얼</span>
+      </div>
+      <div class="tone-row">
+        <span class="tr-label">감성적</span>
+        <div class="tr-bar"><div class="tr-dot" style="left:50%;"></div></div>
+        <span class="tr-label-end">이성적</span>
+      </div>
+      <div class="tone-row">
+        <span class="tr-label">자극적</span>
+        <div class="tr-bar"><div class="tr-dot" style="left:60%;"></div></div>
+        <span class="tr-label-end">절제</span>
+      </div>
+      <div class="tone-row">
+        <span class="tr-label">화려한</span>
+        <div class="tr-bar"><div class="tr-dot" style="left:65%;"></div></div>
+        <span class="tr-label-end">담백한</span>
+      </div>
+    </div>
+
+    <!-- Key Patterns -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:16px;">Key Verbal Patterns</h3>
+    <div class="pattern-grid">
+      <div class="pattern-card">
+        <div class="pc-type">Evidence Type</div>
+        <div class="pc-name">체감 + 숫자</div>
+        <div class="pc-example">"2주 후, 모공 30% 축소. 직접 확인해보세요."</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pc-type">Habit Type</div>
+        <div class="pc-name">루틴 + 쉬움</div>
+        <div class="pc-example">"하루 5분. 세안 후, 한 번 바르면 끝."</div>
+      </div>
+      <div class="pattern-card">
+        <div class="pc-type">Empathy Type</div>
+        <div class="pc-name">전/후 + 공감</div>
+        <div class="pc-example">"달라진 건 제품이 아니라 나였습니다."</div>
+      </div>
+    </div>
+
+    <!-- Words We Use -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:16px;">Words We Use</h3>
+    <div class="words-grid">
+      <div class="words-col words-do">
+        <div class="wc-title">사용하는 말</div>
+        <ul class="wc-list">
+          <li>매일</li>
+          <li>체감</li>
+          <li>달라지다</li>
+          <li>루틴</li>
+          <li>습관</li>
+          <li>구체적인 숫자</li>
+          <li>직접, 실제</li>
+        </ul>
+      </div>
+      <div class="words-col words-cond">
+        <div class="wc-title">조건부</div>
+        <ul class="wc-list">
+          <li>"놀라운" — 근거와 함께</li>
+          <li>"진짜" — 데이터 동반 시</li>
+          <li>"확 달라진" — 비교 사진 병행</li>
+        </ul>
+      </div>
+      <div class="words-col words-dont">
+        <div class="wc-title">쓰지 않는 말</div>
+        <ul class="wc-list">
+          <li>기적</li>
+          <li>마법</li>
+          <li>즉각적</li>
+          <li>단번에</li>
+          <li>검증 불가한 과장</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- ═══ 04. Habit Connection ═══ -->
+  <div class="section reveal">
+    <div class="section-label">04 — Habit Connection</div>
+    <h2 class="section-title">습관 루프</h2>
+    <p class="section-desc">키소나 제품은 습관 루프 위에 설계됩니다. 신호 → 행동 → 보상의 반복이 루틴을 만들고, 루틴이 체감을 만듭니다.</p>
+
+    <div class="habit-loop">
+      <div class="habit-node">
+        <div class="hn-label">Cue</div>
+        <div class="hn-text">신호</div>
+      </div>
+      <div class="habit-connector">→</div>
+      <div class="habit-node">
+        <div class="hn-label">Action</div>
+        <div class="hn-text">행동</div>
+      </div>
+      <div class="habit-connector">→</div>
+      <div class="habit-node hn-reward">
+        <div class="hn-label">Reward</div>
+        <div class="hn-text">보상</div>
+      </div>
+      <div class="habit-connector">↻</div>
+    </div>
+
+    <!-- Daily Rhythm Timeline -->
+    <h3 style="font-size:16px;font-weight:600;color:var(--base-100);margin-bottom:20px;">Daily Rhythm</h3>
+    <div class="daily-timeline">
+      <div class="dt-item">
+        <div class="dt-dot"></div>
+        <div class="dt-time">07:00</div>
+        <div class="dt-title">아침 세안 후</div>
+        <div class="dt-desc">세안 완료가 신호 → 키소나 모닝 루틴 → 산뜻한 시작(보상)</div>
+      </div>
+      <div class="dt-item">
+        <div class="dt-dot"></div>
+        <div class="dt-time">12:00</div>
+        <div class="dt-title">낮 미스트</div>
+        <div class="dt-desc">건조함 감지가 신호 → 미스트 한 번 → 촉촉한 체감(보상)</div>
+      </div>
+      <div class="dt-item">
+        <div class="dt-dot"></div>
+        <div class="dt-time">22:00</div>
+        <div class="dt-title">저녁 나이트 루틴</div>
+        <div class="dt-desc">잠자리 준비가 신호 → 풀 케어 루틴 → 다음 날 아침 달라진 피부(보상)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="summary-block reveal">
+    <div class="summary-inner">
+      <div class="si-title">Summary</div>
+      <div class="summary-row"><span class="sr-key">Brand Essence</span><span class="sr-val">습관</span></div>
+      <div class="summary-row"><span class="sr-key">Tagline</span><span class="sr-val">매일 달라지는 나를 만나다</span></div>
+      <div class="summary-row"><span class="sr-key">Brand Promise</span><span class="sr-val">실제로 달라지는 것만 약속합니다</span></div>
+      <div class="summary-row"><span class="sr-key">Journey</span><span class="sr-val">멈춤 → 만남 → 습관 → 달라짐</span></div>
+      <div class="summary-row"><span class="sr-key">Product Concept</span><span class="sr-val">Real Difference</span></div>
+      <div class="summary-row"><span class="sr-key">Tone</span><span class="sr-val">담백한 확신</span></div>
+      <div class="summary-row"><span class="sr-key">Habit Loop</span><span class="sr-val">Cue → Action → Reward ↻</span></div>
+      <div class="summary-row"><span class="sr-key">Category</span><span class="sr-val">홈케어</span></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    KISONA · Brand Concept Document
+  </div>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+
+</html>

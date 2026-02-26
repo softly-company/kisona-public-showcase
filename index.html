@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KISONA — Brand System Hub</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      /* Point (Muted Blue) — Primary / Brand */
+      --point-50: #f4f7fb;
+      --point-100: #e3ecf5;
+      --point-200: #c5d6e8;
+      --point-300: #9fb8d1;
+      --point-400: #7e9dbd;
+      --point-500: #5e81ac;
+      --point-600: #4b6a92;
+      --point-700: #3b5576;
+      --point-800: #2f435d;
+      --point-900: #223247;
+
+      /* Base (Slate-800 × Opacity) — All Grays */
+      --base-100: #1e293b;
+      --base-80: #1e293bcc;
+      --base-60: #1e293b99;
+      --base-50: #1e293b80;
+      --base-40: #1e293b66;
+      --base-30: #1e293b4d;
+      --base-20: #1e293b33;
+      --base-10: #1e293b1a;
+      --base-08: #1e293b14;
+      --base-07: #1e293b12;
+      --base-05: #1e293b0d;
+      --base-03: #1e293b08;
+      --base-02: #1e293b05;
+
+      /* Red — Accent */
+      --red-50: #fff1f2;
+      --red-100: #ffe4e6;
+      --red-500: #f43f5e;
+      --red-600: #e11d48;
+      --red-700: #be123c;
+
+      --white: #ffffff;
+
+      /* Silver / Metallic */
+      --silver-light: #e8ecf1;
+      --silver-base: #c8cfd8;
+      --silver-dark: #9ca3af;
+
+      --sidebar-w: 280px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8f9fc;
+      color: var(--base-80);
+      font-size: 14px;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* ─── Sidebar ─── */
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: var(--sidebar-w);
+      background: white;
+      border-right: 1px solid var(--base-10);
+      display: flex;
+      flex-direction: column;
+      z-index: 100;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-header {
+      padding: 24px 24px 20px;
+      border-bottom: 1px solid var(--base-07);
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .sidebar-brand .brand-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: var(--point-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 16px;
+      font-family: 'DM Sans', sans-serif;
+      flex-shrink: 0;
+    }
+
+    .sidebar-brand .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-brand .brand-name {
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: 0.04em;
+      color: var(--point-700);
+    }
+
+    .sidebar-brand .brand-sub {
+      font-size: 11px;
+      color: var(--base-40);
+      letter-spacing: 0.02em;
+    }
+
+    .sidebar-meta {
+      font-size: 11px;
+      color: var(--base-30);
+      display: flex;
+      gap: 12px;
+    }
+
+    .sidebar-meta span {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* ─── Nav ─── */
+    .sidebar-nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 12px;
+    }
+
+    .nav-group {
+      margin-bottom: 20px;
+    }
+
+    .nav-group-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--base-30);
+      text-transform: uppercase;
+      padding: 0 12px;
+      margin-bottom: 8px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.15s;
+      text-decoration: none;
+      color: var(--base-60);
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .nav-item:hover {
+      background: var(--base-05);
+      color: var(--base-100);
+    }
+
+    .nav-item.active {
+      background: var(--point-50);
+      color: var(--point-700);
+      font-weight: 500;
+    }
+
+    .nav-item .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .nav-item .nav-badge {
+      margin-left: auto;
+      font-size: 10px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-point {
+      background: var(--point-100);
+      color: var(--point-700);
+    }
+
+    .badge-base {
+      background: var(--base-07);
+      color: var(--base-60);
+    }
+
+    .badge-red {
+      background: var(--red-100);
+      color: var(--red-600);
+    }
+
+    /* ─── Sidebar Footer ─── */
+    .sidebar-footer {
+      padding: 16px 24px;
+      border-top: 1px solid var(--base-07);
+      font-size: 11px;
+      color: var(--base-30);
+      line-height: 1.5;
+    }
+
+    .sidebar-footer .footer-copy {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--base-40);
+      font-style: italic;
+    }
+
+    /* ─── Main ─── */
+    .main {
+      margin-left: var(--sidebar-w);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ─── Top Bar ─── */
+    .topbar {
+      height: 48px;
+      border-bottom: 1px solid var(--base-10);
+      display: flex;
+      align-items: center;
+      padding: 0 24px;
+      background: white;
+      flex-shrink: 0;
+      gap: 12px;
+    }
+
+    .topbar-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--base-100);
+    }
+
+    .topbar-path {
+      font-size: 12px;
+      color: var(--base-30);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .topbar-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .topbar-btn {
+      padding: 5px 12px;
+      font-size: 12px;
+      border: 1px solid var(--base-10);
+      border-radius: 6px;
+      background: white;
+      color: var(--base-60);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+
+    .topbar-btn:hover {
+      border-color: var(--point-300);
+      color: var(--point-700);
+      background: var(--point-50);
+    }
+
+    /* ─── Content Frame ─── */
+    .content-frame {
+      flex: 1;
+      position: relative;
+      overflow-y: auto;
+    }
+
+    .content-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ─── Welcome Screen ─── */
+    .welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100%;
+      text-align: center;
+      padding: 60px 40px 80px;
+      overflow-y: auto;
+    }
+
+    .welcome-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--point-500);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 28px;
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 0.2s forwards;
+    }
+
+    .welcome-word {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: clamp(48px, 8vw, 80px);
+      font-weight: 100;
+      color: var(--base-100);
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 0.4s forwards;
+    }
+
+    .welcome-sub {
+      font-size: 17px;
+      font-weight: 300;
+      color: var(--base-60);
+      line-height: 1.7;
+      max-width: 440px;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 0.6s forwards;
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      max-width: 520px;
+      width: 100%;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 0.8s forwards;
+    }
+
+    .welcome-card {
+      background: white;
+      border: 1px solid var(--base-10);
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+
+    .welcome-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(200,207,216,0.4);
+      border-color: var(--silver-base);
+    }
+
+    .welcome-card .wc-num {
+      font-size: 24px;
+      font-weight: 300;
+      color: var(--point-500);
+      margin-bottom: 4px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .welcome-card .wc-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--base-80);
+      margin-bottom: 2px;
+    }
+
+    .welcome-card .wc-desc {
+      font-size: 11px;
+      color: var(--base-40);
+    }
+
+    .welcome-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 1s forwards;
+    }
+
+    .welcome-stat {
+      text-align: center;
+    }
+
+    .welcome-stat .ws-num {
+      font-size: 24px;
+      font-weight: 600;
+      color: var(--point-600);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .welcome-stat .ws-label {
+      font-size: 11px;
+      color: var(--base-40);
+    }
+
+    @keyframes wFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ─── Mobile Toggle ─── */
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 200;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: white;
+      border: 1px solid var(--base-10);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .sidebar-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.3);
+      z-index: 99;
+    }
+
+    @media (max-width:900px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .sidebar.open {
+        transform: translateX(0);
+      }
+
+      .sidebar-overlay.open {
+        display: block;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+      .main {
+        margin-left: 0;
+      }
+
+      .topbar {
+        padding-left: 56px;
+      }
+    }
+
+    /* ─── Color Palette Section ─── */
+    .palette-section {
+      width: 100%;
+      max-width: 800px;
+      margin-top: 56px;
+      opacity: 0;
+      animation: wFadeIn 0.8s ease-out 1.2s forwards;
+    }
+
+    .palette-section-title {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--base-30);
+      margin-bottom: 24px;
+      text-align: left;
+    }
+
+    .palette-group {
+      margin-bottom: 20px;
+    }
+
+    .palette-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--base-60);
+      margin-bottom: 8px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .palette-label .pl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .palette-label .pl-sub {
+      font-weight: 400;
+      color: var(--base-30);
+      font-size: 11px;
+    }
+
+    .swatch-row {
+      display: flex;
+      gap: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .swatch {
+      flex: 1;
+      height: 56px;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 6px;
+    }
+
+    .swatch:hover {
+      transform: scaleY(1.25);
+      z-index: 2;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+    }
+
+    .swatch .swatch-info {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: var(--base-100);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.15s ease;
+      text-align: center;
+      line-height: 1.4;
+    }
+
+    .swatch .swatch-info::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--base-100);
+    }
+
+    .swatch:hover .swatch-info {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    .swatch .swatch-step {
+      font-size: 9px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 0.15s;
+    }
+
+    .swatch:hover .swatch-step {
+      opacity: 1;
+    }
+
+    .swatch.light-text .swatch-step {
+      color: rgba(255, 255, 255, 0.8);
+    }
+
+    .swatch.dark-text .swatch-step {
+      color: rgba(0, 0, 0, 0.35);
+    }
+
+    /* Semantic row */
+    .semantic-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+
+    .semantic-swatch {
+      height: 48px;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    }
+
+    .semantic-swatch:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .semantic-swatch .sem-label {
+      font-size: 11px;
+      font-weight: 500;
+      color: white;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .semantic-swatch .swatch-info {
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%) scale(0.9);
+      background: var(--base-100);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.15s ease;
+    }
+
+    .semantic-swatch .swatch-info::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: var(--base-100);
+    }
+
+    .semantic-swatch:hover .swatch-info {
+      opacity: 1;
+      transform: translateX(-50%) scale(1);
+    }
+
+    /* Copy Toast */
+    .copy-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--base-100);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Color ratio bar */
+    .ratio-bar {
+      display: flex;
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 4px;
+      margin-bottom: 24px;
+    }
+
+    .ratio-bar span {
+      display: block;
+    }
+
+    @media (max-width:600px) {
+      .swatch {
+        height: 44px;
+      }
+
+      .semantic-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .palette-section {
+        padding: 0 8px;
+      }
+
+      .welcome-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile Toggle -->
+  <button class="menu-toggle" onclick="toggleSidebar()">
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+      <path d="M3 5h12M3 9h12M3 13h12" stroke="#1e293b" stroke-width="1.5" stroke-linecap="round" />
+    </svg>
+  </button>
+  <div class="sidebar-overlay" onclick="toggleSidebar()"></div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-brand">
+        <div class="brand-icon">K</div>
+        <div class="brand-text">
+          <span class="brand-name">KISONA</span>
+          <span class="brand-sub">Brand System Hub</span>
+        </div>
+      </div>
+      <div class="sidebar-meta">
+        <span>v1.6</span>
+        <span>2026.02.26</span>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <!-- Home -->
+      <div class="nav-group">
+        <a class="nav-item active" onclick="loadDoc('welcome','KISONA Brand System','Home')">
+          <div class="nav-dot" style="background:var(--point-500);"></div>
+          Home
+        </a>
+      </div>
+
+      <!-- Concept -->
+      <div class="nav-group">
+        <div class="nav-group-label">Concept</div>
+        <a class="nav-item" onclick="loadDoc('03-visual-identity/brand-concept.html','Brand Concept','03-visual-identity/')">
+          <div class="nav-dot" style="background:var(--point-500);"></div>
+          Brand Concept
+        </a>
+      </div>
+
+      <!-- Visual Identity -->
+      <div class="nav-group">
+        <div class="nav-group-label">Visual Identity</div>
+        <a class="nav-item" onclick="loadDoc('03-visual-identity/color-typography.html','Color & Typography','03-visual-identity/')">
+          <div class="nav-dot" style="background:var(--point-400);"></div>
+          Color & Typography
+        </a>
+        <a class="nav-item" onclick="loadDoc('03-visual-identity/prompt-guide.html','Prompt Guide','03-visual-identity/')">
+          <div class="nav-dot" style="background:var(--silver-base);"></div>
+          Prompt Guide
+          <span class="nav-badge badge-base">35</span>
+        </a>
+        <a class="nav-item" onclick="loadDoc('04-application/snaps.html','Snaps','04-application/')">
+          <div class="nav-dot" style="background:var(--silver-dark);"></div>
+          Snaps
+          <span class="nav-badge badge-base">31</span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- System -->
+    <div class="nav-group" style="border-top:1px solid var(--base-07);padding:8px 12px 0;">
+      <div class="nav-group-label">System</div>
+      <a class="nav-item" onclick="loadDoc('version-notes.html','Version Notes','')">
+        <div class="nav-dot" style="background:var(--base-40);"></div>
+        Version Notes
+        <span class="nav-badge badge-base">v1.6</span>
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="footer-copy">"매일 달라지는 나를 만나다."</div>
+      <div style="margin-top:6px;">KISONA Brand Application System</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">KISONA Brand System</div>
+      <div class="topbar-path" id="topbar-path">Home</div>
+      <div class="topbar-actions">
+        <button class="topbar-btn" onclick="openInNewTab()">New Tab</button>
+      </div>
+    </div>
+
+    <div class="content-frame" id="content-frame">
+      <!-- Welcome Screen -->
+      <div class="welcome" id="welcome-screen">
+        <div class="welcome-icon">K</div>
+        <img src="05-assets/exports/logos/typo/KISONA_logo.svg" alt="KISONA" style="height:36px;opacity:0.2;margin-bottom:8px;opacity:0;animation:wFadeIn 0.8s ease-out 0.3s forwards;">
+        <div class="welcome-word">습관</div>
+        <div class="welcome-sub">
+          실제로 달라지는 것을 매일 체감하다.<br>
+          KISONA Brand Application System
+        </div>
+        <div class="welcome-grid">
+          <div class="welcome-card" onclick="loadDoc('03-visual-identity/brand-concept.html','Brand Concept','03-visual-identity/')">
+            <div class="wc-num">01</div>
+            <div class="wc-label">Concept</div>
+            <div class="wc-desc">브랜드 컨셉</div>
+          </div>
+          <div class="welcome-card" onclick="loadDoc('03-visual-identity/color-typography.html','Color & Typography','03-visual-identity/')">
+            <div class="wc-num">02</div>
+            <div class="wc-label">Color & Type</div>
+            <div class="wc-desc">컬러 & 타이포그래피</div>
+          </div>
+          <div class="welcome-card" onclick="loadDoc('version-notes.html','Version Notes','')">
+            <div class="wc-num">03</div>
+            <div class="wc-label">Version</div>
+            <div class="wc-desc">버전 노트</div>
+          </div>
+        </div>
+        <div class="welcome-stats">
+          <div class="welcome-stat">
+            <div class="ws-num">3</div>
+            <div class="ws-label">Documents</div>
+          </div>
+          <div class="welcome-stat">
+            <div class="ws-num">1</div>
+            <div class="ws-label">Color System</div>
+          </div>
+          <div class="welcome-stat">
+            <div class="ws-num">3</div>
+            <div class="ws-label">Typefaces</div>
+          </div>
+        </div>
+
+        <!-- ─── Color Palette ─── -->
+        <div class="palette-section">
+          <div class="palette-section-title">Color Palette</div>
+
+          <!-- Point (Blue) -->
+          <div class="palette-group">
+            <div class="palette-label">
+              <span class="pl-dot" style="background:#5e81ac;"></span>
+              Point <span class="pl-sub">— Primary / Brand</span>
+            </div>
+            <div class="swatch-row">
+              <div class="swatch dark-text" style="background:#f4f7fb;" onclick="copySwatch('#f4f7fb')">
+                <span class="swatch-info">Point 50<br>#f4f7fb</span>
+                <span class="swatch-step">50</span>
+              </div>
+              <div class="swatch dark-text" style="background:#e3ecf5;" onclick="copySwatch('#e3ecf5')">
+                <span class="swatch-info">Point 100<br>#e3ecf5</span>
+                <span class="swatch-step">100</span>
+              </div>
+              <div class="swatch dark-text" style="background:#c5d6e8;" onclick="copySwatch('#c5d6e8')">
+                <span class="swatch-info">Point 200<br>#c5d6e8</span>
+                <span class="swatch-step">200</span>
+              </div>
+              <div class="swatch dark-text" style="background:#9fb8d1;" onclick="copySwatch('#9fb8d1')">
+                <span class="swatch-info">Point 300<br>#9fb8d1</span>
+                <span class="swatch-step">300</span>
+              </div>
+              <div class="swatch dark-text" style="background:#7e9dbd;" onclick="copySwatch('#7e9dbd')">
+                <span class="swatch-info">Point 400<br>#7e9dbd</span>
+                <span class="swatch-step">400</span>
+              </div>
+              <div class="swatch light-text" style="background:#5e81ac;" onclick="copySwatch('#5e81ac')">
+                <span class="swatch-info">Point 500 ★<br>#5e81ac</span>
+                <span class="swatch-step">500</span>
+              </div>
+              <div class="swatch light-text" style="background:#4b6a92;" onclick="copySwatch('#4b6a92')">
+                <span class="swatch-info">Point 600<br>#4b6a92</span>
+                <span class="swatch-step">600</span>
+              </div>
+              <div class="swatch light-text" style="background:#3b5576;" onclick="copySwatch('#3b5576')">
+                <span class="swatch-info">Point 700<br>#3b5576</span>
+                <span class="swatch-step">700</span>
+              </div>
+              <div class="swatch light-text" style="background:#2f435d;" onclick="copySwatch('#2f435d')">
+                <span class="swatch-info">Point 800<br>#2f435d</span>
+                <span class="swatch-step">800</span>
+              </div>
+              <div class="swatch light-text" style="background:#223247;" onclick="copySwatch('#223247')">
+                <span class="swatch-info">Point 900<br>#223247</span>
+                <span class="swatch-step">900</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Base (Opacity) -->
+          <div class="palette-group">
+            <div class="palette-label">
+              <span class="pl-dot" style="background:#1e293b;"></span>
+              Base <span class="pl-sub">— #1e293b × Opacity</span>
+            </div>
+            <div class="swatch-row">
+              <div class="swatch light-text" style="background:#1e293b;" onclick="copySwatch('#1e293b')">
+                <span class="swatch-info">100%<br>#1e293b</span>
+                <span class="swatch-step">100</span>
+              </div>
+              <div class="swatch light-text" style="background:linear-gradient(#1e293bcc,#1e293bcc),#fff;" onclick="copySwatch('#1e293bcc')">
+                <span class="swatch-info">80%<br>#1e293bcc</span>
+                <span class="swatch-step">80</span>
+              </div>
+              <div class="swatch light-text" style="background:linear-gradient(#1e293b99,#1e293b99),#fff;" onclick="copySwatch('#1e293b99')">
+                <span class="swatch-info">60%<br>#1e293b99</span>
+                <span class="swatch-step">60</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b80,#1e293b80),#fff;" onclick="copySwatch('#1e293b80')">
+                <span class="swatch-info">50%<br>#1e293b80</span>
+                <span class="swatch-step">50</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b66,#1e293b66),#fff;" onclick="copySwatch('#1e293b66')">
+                <span class="swatch-info">40%<br>#1e293b66</span>
+                <span class="swatch-step">40</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b33,#1e293b33),#fff;" onclick="copySwatch('#1e293b33')">
+                <span class="swatch-info">20%<br>#1e293b33</span>
+                <span class="swatch-step">20</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b1a,#1e293b1a),#fff;" onclick="copySwatch('#1e293b1a')">
+                <span class="swatch-info">10%<br>#1e293b1a</span>
+                <span class="swatch-step">10</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b0d,#1e293b0d),#fff;" onclick="copySwatch('#1e293b0d')">
+                <span class="swatch-info">5%<br>#1e293b0d</span>
+                <span class="swatch-step">05</span>
+              </div>
+              <div class="swatch dark-text" style="background:linear-gradient(#1e293b05,#1e293b05),#fff;" onclick="copySwatch('#1e293b05')">
+                <span class="swatch-info">2%<br>#1e293b05</span>
+                <span class="swatch-step">02</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Red Accent -->
+          <div class="palette-group">
+            <div class="palette-label">
+              <span class="pl-dot" style="background:#f43f5e;"></span>
+              Red <span class="pl-sub">— Accent / Alert</span>
+            </div>
+            <div class="swatch-row" style="max-width:40%;">
+              <div class="swatch dark-text" style="background:#fff1f2;" onclick="copySwatch('#fff1f2')">
+                <span class="swatch-info">Red 50<br>#fff1f2</span>
+                <span class="swatch-step">50</span>
+              </div>
+              <div class="swatch light-text" style="background:#f43f5e;" onclick="copySwatch('#f43f5e')">
+                <span class="swatch-info">Red 500 ★<br>#f43f5e</span>
+                <span class="swatch-step">500</span>
+              </div>
+              <div class="swatch light-text" style="background:#e11d48;" onclick="copySwatch('#e11d48')">
+                <span class="swatch-info">Red 600<br>#e11d48</span>
+                <span class="swatch-step">600</span>
+              </div>
+              <div class="swatch light-text" style="background:#be123c;" onclick="copySwatch('#be123c')">
+                <span class="swatch-info">Red 700<br>#be123c</span>
+                <span class="swatch-step">700</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Ratio -->
+          <div class="palette-group">
+            <div class="palette-label">
+              70 — 20 — 10 <span class="pl-sub">Color Ratio</span>
+            </div>
+            <div class="ratio-bar">
+              <span style="flex:70;background:var(--base-40);border-radius:4px 0 0 4px;" title="Base 70%"></span>
+              <span style="flex:20;background:var(--point-500);" title="Point 20%"></span>
+              <span style="flex:10;background:var(--red-500);border-radius:0 4px 4px 0;" title="Red 10%"></span>
+            </div>
+          </div>
+
+          <!-- Semantic -->
+          <div class="palette-group">
+            <div class="palette-label">
+              Semantic <span class="pl-sub">— Functional Colors</span>
+            </div>
+            <div class="semantic-row">
+              <div class="semantic-swatch" style="background:#5b9e7a;" onclick="copySwatch('#5b9e7a')">
+                <span class="swatch-info">Success<br>#5b9e7a</span>
+                <span class="sem-label">Success</span>
+              </div>
+              <div class="semantic-swatch" style="background:#f43f5e;" onclick="copySwatch('#f43f5e')">
+                <span class="swatch-info">Error<br>#f43f5e</span>
+                <span class="sem-label">Error</span>
+              </div>
+              <div class="semantic-swatch" style="background:#d4915e;" onclick="copySwatch('#d4915e')">
+                <span class="swatch-info">Warning<br>#d4915e</span>
+                <span class="sem-label">Warning</span>
+              </div>
+              <div class="semantic-swatch" style="background:#5e81ac;" onclick="copySwatch('#5e81ac')">
+                <span class="swatch-info">Info<br>#5e81ac</span>
+                <span class="sem-label">Info</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="font-size:11px;color:var(--base-30);text-align:center;margin-top:12px;">
+            Click any swatch to copy hex code
+          </div>
+          <div style="text-align:center;margin-top:16px;">
+            <a style="font-size:13px;font-weight:500;color:var(--point-600);text-decoration:none;cursor:pointer;" onclick="loadDoc('03-visual-identity/color-typography.html','Color & Typography','03-visual-identity/')">Color & Typography에서 전체 보기 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copy Toast -->
+  <div class="copy-toast" id="copy-toast"></div>
+
+  <script>
+    let currentSrc = null;
+
+    function loadDoc(src, title, path) {
+      const frame = document.getElementById('content-frame');
+      const welcome = document.getElementById('welcome-screen');
+      const titleEl = document.getElementById('topbar-title');
+      const pathEl = document.getElementById('topbar-path');
+
+      titleEl.textContent = title;
+      pathEl.textContent = path;
+
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+
+      if (src === 'welcome') {
+        if (frame.querySelector('iframe')) {
+          frame.querySelector('iframe').remove();
+        }
+        if (welcome) welcome.style.display = 'flex';
+        currentSrc = null;
+        return;
+      }
+
+      currentSrc = src;
+      if (welcome) welcome.style.display = 'none';
+
+      let iframe = frame.querySelector('iframe');
+      if (!iframe) {
+        iframe = document.createElement('iframe');
+        frame.appendChild(iframe);
+      }
+      iframe.src = src;
+
+      if (window.innerWidth <= 900) {
+        toggleSidebar();
+      }
+    }
+
+    function openInNewTab() {
+      if (currentSrc) {
+        window.open(currentSrc, '_blank');
+      }
+    }
+
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+      document.querySelector('.sidebar-overlay').classList.toggle('open');
+    }
+
+    function copySwatch(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        const toast = document.getElementById('copy-toast');
+        toast.textContent = 'Copied ' + hex;
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1600);
+      });
+    }
+  </script>
+
+</body>
+
+</html>
