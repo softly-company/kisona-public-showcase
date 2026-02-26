@@ -312,9 +312,162 @@
       font-family:'DM Sans',sans-serif;
     }
 
-    /* ─── Detail Content ─── */
-    .detail-content{padding:60px 0 120px;}
+    /* ─── Tab Panels ─── */
+    .tab-panel{display:none;padding:60px 0 120px;}
+    .tab-panel.active{display:block;}
 
+    /* ─── Review Section ─── */
+    .review-header{
+      display:flex;align-items:flex-start;justify-content:space-between;
+      margin-bottom:40px;gap:40px;
+    }
+    .review-overview{flex:0 0 240px;text-align:center;padding:32px;
+      background:var(--point-50);border-radius:16px;border:1px solid var(--point-100);
+    }
+    .review-big-score{
+      font-size:56px;font-weight:700;color:var(--base-100);
+      font-family:'DM Sans',sans-serif;letter-spacing:-0.04em;line-height:1;
+    }
+    .review-big-score span{font-size:20px;font-weight:400;color:var(--base-40);}
+    .review-stars-big{display:flex;justify-content:center;gap:3px;margin:12px 0 8px;}
+    .review-stars-big svg{width:20px;height:20px;fill:var(--point-500);}
+    .review-total-count{font-size:13px;color:var(--base-50);}
+
+    .review-bars{flex:1;display:flex;flex-direction:column;gap:8px;padding-top:12px;}
+    .review-bar-row{display:flex;align-items:center;gap:10px;font-size:13px;}
+    .review-bar-label{width:36px;text-align:right;color:var(--base-50);font-weight:500;flex-shrink:0;}
+    .review-bar-track{flex:1;height:8px;background:var(--base-05);border-radius:4px;overflow:hidden;}
+    .review-bar-fill{height:100%;background:var(--point-400);border-radius:4px;transition:width 0.6s ease;}
+    .review-bar-count{width:48px;font-size:12px;color:var(--base-40);font-family:'DM Sans',sans-serif;}
+
+    .review-filters{
+      display:flex;gap:8px;margin-bottom:24px;flex-wrap:wrap;
+    }
+    .review-filter{
+      padding:7px 16px;border-radius:20px;font-size:13px;
+      border:1px solid var(--base-10);background:white;color:var(--base-60);
+      cursor:pointer;transition:all 0.15s;font-family:inherit;
+    }
+    .review-filter:hover{border-color:var(--point-300);color:var(--point-600);}
+    .review-filter.active{background:var(--point-500);color:white;border-color:var(--point-500);}
+
+    .review-list{display:flex;flex-direction:column;gap:0;}
+    .review-item{
+      padding:24px 0;border-bottom:1px solid var(--base-05);
+    }
+    .review-item-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+    .review-avatar{
+      width:36px;height:36px;border-radius:50%;
+      background:var(--silver-light);display:flex;align-items:center;
+      justify-content:center;font-size:13px;font-weight:600;color:var(--point-600);
+      flex-shrink:0;
+    }
+    .review-meta{flex:1;}
+    .review-name{font-size:13px;font-weight:600;color:var(--base-80);}
+    .review-date{font-size:11px;color:var(--base-40);margin-top:1px;}
+    .review-item-stars{display:flex;gap:2px;}
+    .review-item-stars svg{width:14px;height:14px;fill:var(--point-500);}
+    .review-item-stars svg.empty{fill:var(--base-10);}
+    .review-option-tag{
+      font-size:11px;color:var(--base-50);background:var(--base-05);
+      padding:3px 8px;border-radius:4px;margin-bottom:10px;display:inline-block;
+    }
+    .review-text{font-size:14px;color:var(--base-80);line-height:1.7;}
+    .review-photos{display:flex;gap:8px;margin-top:12px;}
+    .review-photo{
+      width:72px;height:72px;border-radius:10px;overflow:hidden;
+      background:var(--base-05);cursor:pointer;border:1px solid var(--base-08);
+    }
+    .review-photo img{width:100%;height:100%;object-fit:cover;}
+    .review-helpful{
+      display:flex;align-items:center;gap:6px;margin-top:12px;
+      font-size:12px;color:var(--base-40);
+    }
+    .review-helpful button{
+      background:none;border:1px solid var(--base-10);border-radius:6px;
+      padding:4px 10px;font-size:11px;color:var(--base-50);cursor:pointer;
+      font-family:inherit;transition:all 0.15s;
+    }
+    .review-helpful button:hover{border-color:var(--point-300);color:var(--point-600);}
+
+    .review-pagination{
+      display:flex;justify-content:center;gap:4px;margin-top:40px;
+    }
+    .review-page{
+      width:36px;height:36px;border-radius:8px;border:1px solid var(--base-10);
+      background:white;font-size:13px;color:var(--base-60);cursor:pointer;
+      display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;
+      transition:all 0.15s;
+    }
+    .review-page:hover{border-color:var(--point-300);}
+    .review-page.active{background:var(--point-500);color:white;border-color:var(--point-500);}
+
+    /* ─── QnA Section ─── */
+    .qna-list{display:flex;flex-direction:column;gap:0;}
+    .qna-item{border-bottom:1px solid var(--base-05);}
+    .qna-q{
+      display:flex;align-items:flex-start;gap:12px;padding:20px 0;
+      cursor:pointer;transition:background 0.15s;
+    }
+    .qna-q:hover{background:var(--base-03);}
+    .qna-icon{
+      width:28px;height:28px;border-radius:6px;flex-shrink:0;
+      display:flex;align-items:center;justify-content:center;
+      font-size:13px;font-weight:700;font-family:'DM Sans',sans-serif;
+    }
+    .qna-icon-q{background:var(--point-50);color:var(--point-600);}
+    .qna-icon-a{background:var(--base-05);color:var(--base-60);}
+    .qna-body{flex:1;}
+    .qna-title{font-size:14px;color:var(--base-80);font-weight:500;}
+    .qna-info{font-size:11px;color:var(--base-40);margin-top:4px;}
+    .qna-badge-secret{
+      font-size:10px;background:var(--base-08);color:var(--base-50);
+      padding:2px 6px;border-radius:3px;margin-left:8px;
+    }
+    .qna-a{padding:0 0 20px 40px;}
+    .qna-a-text{
+      font-size:13px;color:var(--base-60);line-height:1.7;
+      padding:16px 20px;background:var(--point-50);border-radius:10px;
+      border:1px solid var(--point-100);
+    }
+    .qna-write-btn{
+      display:inline-flex;align-items:center;gap:6px;
+      padding:10px 20px;border-radius:10px;font-size:13px;font-weight:500;
+      border:1px solid var(--point-500);color:var(--point-600);background:white;
+      cursor:pointer;font-family:inherit;transition:all 0.15s;margin-bottom:24px;
+    }
+    .qna-write-btn:hover{background:var(--point-50);}
+
+    /* ─── Shipping/Return Section ─── */
+    .ship-section{margin-bottom:40px;}
+    .ship-title{
+      font-size:16px;font-weight:600;color:var(--base-100);
+      margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid var(--base-08);
+    }
+    .ship-table{width:100%;border-collapse:collapse;}
+    .ship-table th,.ship-table td{
+      padding:12px 16px;font-size:13px;text-align:left;
+      border-bottom:1px solid var(--base-05);
+    }
+    .ship-table th{
+      width:140px;color:var(--base-50);font-weight:500;
+      background:var(--base-03);vertical-align:top;
+    }
+    .ship-table td{color:var(--base-80);line-height:1.7;}
+    .ship-notice{
+      padding:20px;background:var(--point-50);border-radius:12px;
+      border:1px solid var(--point-100);font-size:13px;color:var(--base-60);
+      line-height:1.8;margin-top:24px;
+    }
+    .ship-notice strong{color:var(--point-600);}
+
+    @media(max-width:960px){
+      .review-header{flex-direction:column;gap:20px;}
+      .review-overview{flex:auto;max-width:100%;}
+      .ship-table th{width:100px;}
+    }
+
+    /* ─── Detail Content ─── */
     .detail-hero{
       text-align:center;padding:80px 40px;
       background:linear-gradient(180deg,var(--point-50) 0%,white 100%);
@@ -627,14 +780,14 @@
 <!-- Tabs -->
 <div class="tabs-section">
   <div class="tabs-nav">
-    <button class="tab-btn active" onclick="switchTab(this)">상세정보</button>
-    <button class="tab-btn" onclick="switchTab(this)">상품리뷰<span class="tab-count">(2,847)</span></button>
-    <button class="tab-btn" onclick="switchTab(this)">상품문의</button>
-    <button class="tab-btn" onclick="switchTab(this)">배송/교환/반품</button>
+    <button class="tab-btn active" onclick="switchTab(this,'tab-detail')">상세정보</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-review')">상품리뷰<span class="tab-count">(2,847)</span></button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-qna')">상품문의</button>
+    <button class="tab-btn" onclick="switchTab(this,'tab-shipping')">배송/교환/반품</button>
   </div>
 
-  <!-- Detail Content -->
-  <div class="detail-content">
+  <!-- Tab 1: 상세정보 -->
+  <div class="tab-panel active" id="tab-detail">
     <!-- Hero -->
     <div class="detail-hero">
       <div class="detail-hero-label">KISONA Beauty Tech</div>
@@ -723,6 +876,291 @@
       </div>
     </div>
   </div>
+
+  <!-- Tab 2: 상품리뷰 -->
+  <div class="tab-panel" id="tab-review">
+    <!-- Review Summary -->
+    <div class="review-header">
+      <div class="review-overview">
+        <div class="review-big-score">4.9 <span>/ 5</span></div>
+        <div class="review-stars-big">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+        </div>
+        <div class="review-total-count">총 2,847개 리뷰</div>
+      </div>
+      <div class="review-bars">
+        <div class="review-bar-row">
+          <span class="review-bar-label">5점</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:82%;"></div></div>
+          <span class="review-bar-count">2,334</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">4점</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:12%;"></div></div>
+          <span class="review-bar-count">342</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">3점</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:4%;"></div></div>
+          <span class="review-bar-count">114</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">2점</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:1.5%;"></div></div>
+          <span class="review-bar-count">43</span>
+        </div>
+        <div class="review-bar-row">
+          <span class="review-bar-label">1점</span>
+          <div class="review-bar-track"><div class="review-bar-fill" style="width:0.5%;"></div></div>
+          <span class="review-bar-count">14</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="review-filters">
+      <button class="review-filter active">전체 (2,847)</button>
+      <button class="review-filter">포토리뷰 (864)</button>
+      <button class="review-filter">5점 (2,334)</button>
+      <button class="review-filter">4점 (342)</button>
+      <button class="review-filter">1~3점 (171)</button>
+    </div>
+
+    <!-- Review List -->
+    <div class="review-list">
+      <!-- Review 1 -->
+      <div class="review-item">
+        <div class="review-item-header">
+          <div class="review-avatar">JY</div>
+          <div class="review-meta">
+            <div class="review-name">지*영</div>
+            <div class="review-date">2026.02.24</div>
+          </div>
+          <div class="review-item-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+        <div class="review-option-tag">옵션: 올인원 PRO 본체 + 충전 크레들 / Silver</div>
+        <div class="review-text">진짜 인생템이에요!! 피부과에서 받는 고주파 시술이 집에서 된다니 ㅠㅠ 2주 사용했는데 턱선이 확실히 달라졌어요. 실버 컬러도 너무 고급스럽고 크레들 충전이라 관리도 편해요. 친구들한테도 다 추천했어요!</div>
+        <div class="review-photos">
+          <div class="review-photo"><img src="../photo/%EB%B3%B5%ED%95%A9%EC%8B%9D%20%ED%8E%98%EC%9D%B4%EC%85%9C%20%E2%80%94%20%EC%8B%A4%EB%B2%84%20%EC%98%AC%EC%9D%B8%EC%9B%90.jpg" alt="리뷰 사진"></div>
+          <div class="review-photo"><img src="../photo/%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%20%ED%8C%A8%ED%82%A4%EC%A7%80%20%E2%80%94%20%EC%8B%A4%EB%B2%84%20%EC%96%B8%EB%B0%95%EC%8B%B1.jpg" alt="리뷰 사진"></div>
+        </div>
+        <div class="review-helpful">
+          <button onclick="showToast('도움이 되었어요 +1')">도움돼요 128</button>
+        </div>
+      </div>
+
+      <!-- Review 2 -->
+      <div class="review-item">
+        <div class="review-item-header">
+          <div class="review-avatar">SH</div>
+          <div class="review-meta">
+            <div class="review-name">서*현</div>
+            <div class="review-date">2026.02.22</div>
+          </div>
+          <div class="review-item-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+        <div class="review-option-tag">옵션: 올인원 PRO + 앰플 세트 (15% 추가 할인) / Silver</div>
+        <div class="review-text">올리브영에서 계속 고민하다가 할인할 때 앰플 세트로 샀어요. 앰플이랑 같이 쓰니까 흡수력이 장난 아니에요. 초음파 모드에서 앰플 바르고 하면 피부결이 진짜 달라져요. LED 모드도 매일 저녁 하는데 트러블이 확 줄었습니다.</div>
+        <div class="review-helpful">
+          <button onclick="showToast('도움이 되었어요 +1')">도움돼요 93</button>
+        </div>
+      </div>
+
+      <!-- Review 3 -->
+      <div class="review-item">
+        <div class="review-item-header">
+          <div class="review-avatar">MJ</div>
+          <div class="review-meta">
+            <div class="review-name">민*</div>
+            <div class="review-date">2026.02.19</div>
+          </div>
+          <div class="review-item-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" class="empty"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+        <div class="review-option-tag">옵션: 올인원 PRO + RF 글로브 헤드 추가 / Blue</div>
+        <div class="review-text">남자도 쓰기 좋아요. 면도 후에 LED 모드 쓰면 진정 효과 확실하고, 글로브 헤드는 넓은 부위(이마, 볼)에 RF 쓸 때 편합니다. 디자인이 깔끔해서 화장대에 놔둬도 안 촌스러워요. 블루 컬러 선택했는데 실물이 더 예쁩니다.</div>
+        <div class="review-photos">
+          <div class="review-photo"><img src="../photo/%EA%B3%A0%EC%A3%BC%ED%8C%8C%20%ED%8E%98%EC%9D%B4%EC%85%9C%20%E2%80%94%20%EC%8B%A4%EB%B2%84%20%EA%B8%80%EB%A1%9C%EB%B8%8C.jpg" alt="리뷰 사진"></div>
+        </div>
+        <div class="review-helpful">
+          <button onclick="showToast('도움이 되었어요 +1')">도움돼요 76</button>
+        </div>
+      </div>
+
+      <!-- Review 4 -->
+      <div class="review-item">
+        <div class="review-item-header">
+          <div class="review-avatar">YR</div>
+          <div class="review-meta">
+            <div class="review-name">유*란</div>
+            <div class="review-date">2026.02.17</div>
+          </div>
+          <div class="review-item-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+        <div class="review-option-tag">옵션: 올인원 PRO 본체 + 충전 크레들 / Silver</div>
+        <div class="review-text">엄마 선물로 샀는데 너무 좋아하세요! 매일 아침저녁으로 쓰시는데, 한 달 쓰고 나서 피부가 탱탱해졌다고 주변 분들한테 자랑하시더라고요 ㅋㅋ 크레들에 올려놓으면 충전되는 것도 어르신들한테 편한 것 같아요. 가성비 최고입니다.</div>
+        <div class="review-helpful">
+          <button onclick="showToast('도움이 되었어요 +1')">도움돼요 64</button>
+        </div>
+      </div>
+
+      <!-- Review 5 -->
+      <div class="review-item">
+        <div class="review-item-header">
+          <div class="review-avatar">HJ</div>
+          <div class="review-meta">
+            <div class="review-name">현*</div>
+            <div class="review-date">2026.02.14</div>
+          </div>
+          <div class="review-item-stars">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" class="empty"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+            <svg viewBox="0 0 24 24" class="empty"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26"/></svg>
+          </div>
+        </div>
+        <div class="review-option-tag">옵션: 올인원 PRO 본체 + 충전 크레들 / Black</div>
+        <div class="review-text">제품 자체는 좋은데, 배터리가 생각보다 빨리 닳아요. 풀충전해도 RF 모드 기준 3~4번 쓰면 충전해야 해서 조금 아쉬워요. 그래도 크레들 충전이라 세워두면 되니까 크게 불편하진 않습니다. 효과는 확실히 있어서 별 3개요.</div>
+        <div class="review-helpful">
+          <button onclick="showToast('도움이 되었어요 +1')">도움돼요 31</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="review-pagination">
+      <button class="review-page active">1</button>
+      <button class="review-page">2</button>
+      <button class="review-page">3</button>
+      <button class="review-page">4</button>
+      <button class="review-page">5</button>
+      <button class="review-page" style="width:auto;padding:0 12px;">···</button>
+      <button class="review-page">285</button>
+    </div>
+  </div>
+
+  <!-- Tab 3: 상품문의 -->
+  <div class="tab-panel" id="tab-qna">
+    <button class="qna-write-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--point-600)" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+      문의 작성하기
+    </button>
+    <div class="qna-list">
+      <div class="qna-item">
+        <div class="qna-q">
+          <div class="qna-icon qna-icon-q">Q</div>
+          <div class="qna-body">
+            <div class="qna-title">헤드 교체 시 호환 가능한 헤드 종류가 궁금합니다</div>
+            <div class="qna-info">이*수 · 2026.02.25 · <span style="color:var(--point-600);">답변완료</span></div>
+          </div>
+        </div>
+        <div class="qna-a">
+          <div class="qna-icon qna-icon-a" style="display:inline-flex;margin-bottom:8px;">A</div>
+          <div class="qna-a-text">안녕하세요, KISONA입니다. 올인원 PRO는 기본 페이셜 헤드, RF 글로브 헤드, 초음파 스크러버 헤드 3종과 호환됩니다. 각 헤드는 액세서리 페이지에서 별도 구매 가능합니다. 감사합니다.</div>
+        </div>
+      </div>
+      <div class="qna-item">
+        <div class="qna-q">
+          <div class="qna-icon qna-icon-q">Q</div>
+          <div class="qna-body">
+            <div class="qna-title">방수 기능이 있나요? 샤워 중에 사용 가능한지요</div>
+            <div class="qna-info">박*은 · 2026.02.23 · <span style="color:var(--point-600);">답변완료</span></div>
+          </div>
+        </div>
+        <div class="qna-a">
+          <div class="qna-icon qna-icon-a" style="display:inline-flex;margin-bottom:8px;">A</div>
+          <div class="qna-a-text">안녕하세요, KISONA입니다. 올인원 PRO는 IPX5 등급 생활방수를 지원하여 세안 시 물이 튀는 정도는 문제없으나, 샤워 중 물에 직접 담그는 것은 권장하지 않습니다. 사용 후 물기를 닦아 크레들에 보관해 주세요.</div>
+        </div>
+      </div>
+      <div class="qna-item">
+        <div class="qna-q">
+          <div class="qna-icon qna-icon-q">Q</div>
+          <div class="qna-body">
+            <div class="qna-title">민감성 피부인데 RF 모드 사용해도 괜찮을까요?</div>
+            <div class="qna-info">김*아 · 2026.02.20 · <span style="color:var(--point-600);">답변완료</span></div>
+          </div>
+        </div>
+        <div class="qna-a">
+          <div class="qna-icon qna-icon-a" style="display:inline-flex;margin-bottom:8px;">A</div>
+          <div class="qna-a-text">안녕하세요, KISONA입니다. RF 모드는 3단계 강도 조절이 가능합니다. 민감성 피부의 경우 1단계(Low)로 시작하시어 피부 반응을 확인하시길 권장합니다. LED Blue 모드(470nm)는 진정 효과가 있어 민감 피부에도 적합합니다.</div>
+        </div>
+      </div>
+      <div class="qna-item">
+        <div class="qna-q">
+          <div class="qna-icon qna-icon-q">Q</div>
+          <div class="qna-body">
+            <div class="qna-title">블랙프라이데이 할인 언제까지인가요?<span class="qna-badge-secret">비밀글</span></div>
+            <div class="qna-info">최*호 · 2026.02.18 · <span style="color:var(--base-40);">답변대기</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab 4: 배송/교환/반품 -->
+  <div class="tab-panel" id="tab-shipping">
+    <div class="ship-section">
+      <div class="ship-title">배송 안내</div>
+      <table class="ship-table">
+        <tr><th>배송 방법</th><td>CJ 대한통운 택배</td></tr>
+        <tr><th>배송 지역</th><td>전국 (제주·도서산간 포함)</td></tr>
+        <tr><th>배송비</th><td><strong style="color:var(--point-600);">무료배송</strong></td></tr>
+        <tr><th>배송 기간</th><td>결제 완료 후 1~2 영업일 이내 출고<br>도서산간 지역은 2~3일 추가 소요될 수 있습니다.</td></tr>
+        <tr><th>배송 추적</th><td>출고 완료 시 카카오 알림톡 + 문자로 송장번호 발송</td></tr>
+      </table>
+    </div>
+    <div class="ship-section">
+      <div class="ship-title">교환 · 반품 안내</div>
+      <table class="ship-table">
+        <tr><th>교환/반품 기간</th><td>수령 후 7일 이내 (단, 미개봉 · 미사용 제품에 한함)</td></tr>
+        <tr><th>교환/반품 비용</th><td>단순 변심: 왕복 배송비 6,000원 고객 부담<br>제품 불량: 무료 (착불 발송)</td></tr>
+        <tr><th>교환/반품 불가</th><td>• 사용 흔적이 있는 경우<br>• 포장 훼손 · 구성품 분실 시<br>• 수령 후 7일 경과</td></tr>
+        <tr><th>반품 주소</th><td>서울특별시 ○○구 ○○로 00, KISONA 물류센터</td></tr>
+      </table>
+    </div>
+    <div class="ship-section">
+      <div class="ship-title">A/S 안내</div>
+      <table class="ship-table">
+        <tr><th>보증 기간</th><td>구매일로부터 <strong style="color:var(--point-600);">1년 무상 보증</strong></td></tr>
+        <tr><th>A/S 접수</th><td>고객센터 1588-0000 (평일 10:00~18:00)<br>카카오톡 채널 @KISONA</td></tr>
+        <tr><th>유상 수리</th><td>보증 기간 경과 후 부품 비용 + 수리비 별도</td></tr>
+      </table>
+    </div>
+    <div class="ship-notice">
+      <strong>안내사항</strong><br>
+      • 주문 제작 상품 또는 한정판 제품은 교환/반품이 제한될 수 있습니다.<br>
+      • 교환/반품 접수 전 반드시 고객센터로 먼저 연락 부탁드립니다.<br>
+      • 제품 불량 시 사진을 첨부하시면 빠른 처리가 가능합니다.
+    </div>
+  </div>
 </div>
 
 <!-- Footer -->
@@ -787,9 +1225,11 @@
   }
 
   // Tabs
-  function switchTab(btn) {
+  function switchTab(btn, panelId) {
     document.querySelectorAll('.tab-btn').forEach(t => t.classList.remove('active'));
     btn.classList.add('active');
+    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+    document.getElementById(panelId).classList.add('active');
   }
 
   // Toast
