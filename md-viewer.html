@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KISONA — Document</title>
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@100;300;400;500&display=swap"
+    rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <style>
+    :root {
+      --point-50: #f4f7fb;
+      --point-100: #e3ecf5;
+      --point-200: #c5d6e8;
+      --point-300: #9fb8d1;
+      --point-400: #7e9dbd;
+      --point-500: #5e81ac;
+      --point-600: #4b6a92;
+      --point-700: #3b5576;
+      --point-800: #2f435d;
+      --point-900: #223247;
+      --base-100: #1e293b;
+      --base-80: #1e293bcc;
+      --base-60: #1e293b99;
+      --base-50: #1e293b80;
+      --base-40: #1e293b66;
+      --base-30: #1e293b4d;
+      --base-20: #1e293b33;
+      --base-10: #1e293b1a;
+      --base-08: #1e293b14;
+      --base-07: #1e293b12;
+      --base-05: #1e293b0d;
+      --base-03: #1e293b08;
+      --white: #ffffff;
+      --silver-light: #e8ecf1;
+      --silver-base: #c8cfd8;
+      --silver-dark: #9ca3af;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f8f9fc;
+      color: var(--base-80);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--base-100) 0%, var(--point-800) 100%);
+      padding: 48px 40px 40px;
+      color: white;
+    }
+    .header-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 12px;
+    }
+    .header-title {
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.3;
+    }
+    .header-desc {
+      margin-top: 8px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.5;
+    }
+
+    /* Content */
+    .content {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    /* Markdown Styles */
+    .md-body h1 {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--base-100);
+      margin: 48px 0 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--base-08);
+      letter-spacing: -0.3px;
+    }
+    .md-body h1:first-child {
+      display: none; /* Hide first h1, shown in header instead */
+    }
+    .md-body h2 {
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin: 40px 0 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--base-07);
+    }
+    .md-body h3 {
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--base-100);
+      margin: 28px 0 10px;
+    }
+    .md-body h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--point-600);
+      margin: 20px 0 8px;
+    }
+    .md-body p {
+      margin: 8px 0 16px;
+      line-height: 1.8;
+    }
+    .md-body ul, .md-body ol {
+      margin: 8px 0 16px;
+      padding-left: 24px;
+    }
+    .md-body li {
+      margin: 4px 0;
+      line-height: 1.7;
+    }
+    .md-body li ul, .md-body li ol {
+      margin: 4px 0 4px;
+    }
+    .md-body strong {
+      color: var(--base-100);
+      font-weight: 600;
+    }
+    .md-body blockquote {
+      margin: 16px 0;
+      padding: 16px 20px;
+      background: var(--point-50);
+      border-left: 3px solid var(--point-500);
+      border-radius: 0 8px 8px 0;
+      color: var(--base-80);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    .md-body blockquote p {
+      margin: 4px 0;
+    }
+    .md-body code {
+      font-family: 'DM Sans', 'SF Mono', Consolas, monospace;
+      background: var(--base-05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      color: var(--point-700);
+    }
+    .md-body pre {
+      margin: 16px 0;
+      padding: 20px;
+      background: var(--base-100);
+      border-radius: 10px;
+      overflow-x: auto;
+    }
+    .md-body pre code {
+      background: none;
+      color: #e2e8f0;
+      padding: 0;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .md-body table {
+      width: 100%;
+      margin: 16px 0;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+    .md-body thead {
+      background: var(--point-50);
+    }
+    .md-body th {
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 600;
+      color: var(--base-100);
+      border-bottom: 2px solid var(--base-10);
+      font-size: 13px;
+      letter-spacing: 0.3px;
+    }
+    .md-body td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--base-07);
+      line-height: 1.6;
+    }
+    .md-body tr:hover {
+      background: var(--base-03);
+    }
+    .md-body hr {
+      border: none;
+      height: 1px;
+      background: var(--base-08);
+      margin: 32px 0;
+    }
+    .md-body a {
+      color: var(--point-500);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .md-body a:hover {
+      border-bottom-color: var(--point-500);
+    }
+    .md-body img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .md-body input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px;
+      font-size: 12px;
+      color: var(--base-40);
+      font-family: 'DM Sans', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    /* Loading */
+    .loading {
+      text-align: center;
+      padding: 80px 40px;
+      color: var(--base-40);
+      font-size: 14px;
+    }
+    .loading-dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--point-400);
+      margin: 0 3px;
+      animation: pulse 1.2s ease-in-out infinite;
+    }
+    .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; transform: scale(0.8); }
+      50% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Error */
+    .error {
+      text-align: center;
+      padding: 80px 40px;
+      color: var(--base-60);
+    }
+    .error-icon {
+      font-size: 32px;
+      margin-bottom: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header">
+    <div class="header-label" id="header-label">KISONA</div>
+    <div class="header-title" id="header-title">Loading...</div>
+    <div class="header-desc" id="header-desc"></div>
+  </div>
+
+  <div class="content">
+    <div class="loading" id="loading">
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+      <span class="loading-dot"></span>
+    </div>
+    <div class="md-body" id="md-body" style="display:none;"></div>
+    <div class="error" id="error" style="display:none;">
+      <div class="error-icon">!</div>
+      <div>문서를 불러올 수 없습니다.</div>
+    </div>
+  </div>
+
+  <div class="footer">KISONA Brand Application System</div>
+
+  <script>
+    // Document metadata for header display
+    const docMeta = {
+      '01-research/insights.md': {
+        label: '01 — Research',
+        title: 'Research Insights',
+        desc: '고객 데이터 분석을 통해 도출된 종합 인사이트'
+      },
+      '01-research/target-audience.md': {
+        label: '01 — Research',
+        title: 'Target Audience',
+        desc: '타겟 오디언스 정의 및 페르소나'
+      },
+      '01-research/market-analysis.md': {
+        label: '01 — Research',
+        title: 'Market Analysis',
+        desc: '시장 환경 분석'
+      },
+      '01-research/objective-problems.md': {
+        label: '01 — Research',
+        title: 'Objective Problems',
+        desc: '타겟의 객관적 문제 정의'
+      },
+      '01-research/subjective-problems.md': {
+        label: '01 — Research',
+        title: 'Subjective Problems',
+        desc: '타겟의 주관적 문제 정의'
+      },
+      '02-strategy/brand-concept.md': {
+        label: '02 — Strategy',
+        title: 'Brand Concept',
+        desc: '브랜드 에센스 "습관"과 컨셉 아키텍처'
+      },
+      '02-strategy/brand-positioning.md': {
+        label: '02 — Strategy',
+        title: 'Brand Positioning',
+        desc: '포지셔닝 & 차별화 전략'
+      },
+      '02-strategy/brand-personality.md': {
+        label: '02 — Strategy',
+        title: 'Brand Personality',
+        desc: '퍼스낼리티 & 톤앤매너 "담백한 확신"'
+      },
+      '02-strategy/messaging-framework.md': {
+        label: '02 — Strategy',
+        title: 'Messaging Framework',
+        desc: '메시지 체계 L1~L5 및 카피 패턴'
+      },
+      '02-strategy/brand-story.md': {
+        label: '02 — Strategy',
+        title: 'Brand Story',
+        desc: '키소나 브랜드 스토리'
+      },
+      '02-strategy/brand-planning.md': {
+        label: '02 — Strategy',
+        title: 'Brand Planning',
+        desc: '브랜드 로드맵 및 제품 라인업 계획'
+      },
+      '04-application/sdp-planning/README.md': {
+        label: '04 — Application',
+        title: 'SDP Process Guide',
+        desc: '상세페이지 기획 7단계 프로세스'
+      }
+    };
+
+    async function loadMarkdown() {
+      const params = new URLSearchParams(window.location.search);
+      const file = params.get('file');
+
+      if (!file) {
+        showError();
+        return;
+      }
+
+      // Set header
+      const meta = docMeta[file] || {
+        label: 'KISONA',
+        title: file.split('/').pop().replace('.md', ''),
+        desc: ''
+      };
+      document.getElementById('header-label').textContent = meta.label;
+      document.getElementById('header-title').textContent = meta.title;
+      document.getElementById('header-desc').textContent = meta.desc;
+      document.title = 'KISONA — ' + meta.title;
+
+      try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error('Not found');
+        const text = await response.text();
+
+        document.getElementById('loading').style.display = 'none';
+        const mdBody = document.getElementById('md-body');
+        mdBody.innerHTML = marked.parse(text);
+        mdBody.style.display = 'block';
+      } catch (e) {
+        showError();
+      }
+    }
+
+    function showError() {
+      document.getElementById('loading').style.display = 'none';
+      document.getElementById('error').style.display = 'block';
+    }
+
+    loadMarkdown();
+  </script>
+</body>
+
+</html>
