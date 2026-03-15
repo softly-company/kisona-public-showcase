@@ -6,7 +6,7 @@
 
 ## 1. Voice Principle: "담백한 확신"
 
-**Understated Confidence** — 과장 없이, 체감으로 증명하는 목소리.
+**Understated Confidence** — 과장 없이, 설계와 데이터로 증명하는 목소리.
 
 ---
 
@@ -30,11 +30,11 @@
 - 근거: 데이터, 임상, 사용자 수치
 - 용도: 제품 소개, 상세페이지, 리뷰 인용
 
-### Pattern 2: Habit Type — 루틴 + 쉬움
+### Pattern 2: Liberation Type — 루틴 + 해방
 
-> "하루 5분. 세안 후, 한 번 바르면 끝."
+> "신경 끄세요. 설계된 루틴이 불안을 지웁니다."
 
-- 근거: 습관 형성의 용이함
+- 근거: 설계된 제품이 불안을 구조적으로 해결
 - 용도: 캠페인, SNS, 패키지 카피
 
 ### Pattern 3: Empathy Type — 전/후 + 공감
@@ -52,9 +52,9 @@
 
 - 매일
 - 체감
-- 달라지다
+- 해방
+- 설계
 - 루틴
-- 습관
 - 구체적인 숫자
 - 직접, 실제
 
@@ -64,7 +64,7 @@
 |------|----------|
 | "놀라운" | 근거와 함께 |
 | "진짜" | 데이터 동반 시 |
-| "확 달라진" | 비교 사진 병행 |
+| "확실한" | 임상 데이터 병행 |
 
 ### 쓰지 않는 말 (DON'Ts)
 
@@ -78,15 +78,16 @@
 
 ## 5. 브랜드 아키타입
 
-**The Sage × The Caregiver**
+**The Liberator × The Sage**
 
+- Liberator: 불안으로부터의 해방, 담담한 확신, 선언적 톤
 - Sage: 데이터 기반, 증거 제시, 진실 추구
-- Caregiver: 매일의 돌봄, 습관의 파트너, 체감의 공감
 
 ---
 
 ## 관련 문서
 
 - [Brand Concept](brand-concept.md) — 브랜드 컨셉
+- [Brand Guideline](brand-guideline.md) — 종합 가이드라인
 - [Messaging Framework](messaging-framework.md) — 메시지 체계
 - [Visual: Brand Concept](../03-visual-identity/brand-concept.html) — 비주얼 프레젠테이션
