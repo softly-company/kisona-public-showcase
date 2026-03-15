@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>KISONA Premium Brand Book - The Line</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.4.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Noto+Serif+KR:wght@200;300;400&family=Noto+Sans+KR:wght@200;300;400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      /* Clinical Beauty Palette */
+      --k-blue: #5e81ac;        /* Muted Blue - 이성과 신뢰 */
+      --k-slate: #1e293b;       /* Slate Dark - 무게감 */
+      --k-slate-light: #64748b; /* Slate Light - 세련된 텍스트 */
+      --k-silver: #c8cfd8;      /* Metallic Silver - 프로페셔널 */
+      
+      /* Editorial Design System */
+      --bg-canvas: #fcfcfd;
+      --hairline: 1px solid rgba(30, 41, 59, 0.1);
+      --hairline-blue: 1px solid rgba(94, 129, 172, 0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: #e5e7eb; /* 캔버스 바깥쪽 어두운 배경 */
+      font-family: 'Pretendard Variable', -apple-system, sans-serif;
+      color: var(--k-slate);
+      display: flex; justify-content: center; padding: 60px 40px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Editorial Canvas ─── */
+    .brand-book {
+      width: 100%; max-width: 1100px;
+      background: var(--bg-canvas);
+      box-shadow: 0 40px 80px rgba(0,0,0,0.06);
+      position: relative; overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.8);
+    }
+
+    /* 연구실/피부과 모티프의 아주 연한 배경 그리드선 */
+    .grid-v { position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: var(--hairline-blue); z-index: 1; }
+    .grid-h { position: absolute; top: 320px; left: 0; right: 0; height: 1px; background: var(--hairline); z-index: 1; }
+
+    /* ─── Header ─── */
+    header {
+      padding: 60px 80px;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      position: relative; z-index: 10;
+    }
+    .logo {
+      font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+      letter-spacing: 0.3em; color: var(--k-slate);
+    }
+    .meta {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 400;
+      letter-spacing: 0.2em; color: var(--k-slate-light); text-transform: uppercase;
+      text-align: right; line-height: 1.6;
+    }
+
+    /* ─── Hero Title Section ─── */
+    .hero {
+      padding: 40px 80px 100px; position: relative; z-index: 10;
+    }
+    .eyebrow {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.2em; color: var(--k-blue); margin-bottom: 24px;
+      display: inline-block; border-bottom: 1px solid var(--k-blue); padding-bottom: 4px;
+    }
+    .title-kr {
+      font-family: 'Noto Serif KR', serif; font-size: 88px; font-weight: 200;
+      color: var(--k-slate); letter-spacing: -0.03em; line-height: 1; margin-bottom: 16px;
+    }
+    .title-en {
+      font-family: 'Cormorant Garamond', serif; font-size: 110px; font-weight: 300;
+      font-style: italic; color: var(--k-silver); line-height: 0.8; margin-bottom: 48px;
+      margin-left: -4px;
+    }
+    .desc {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 16px; font-weight: 300;
+      color: var(--k-slate-light); line-height: 1.8; max-width: 440px; word-break: keep-all;
+    }
+
+    /* ─── Visual Texture Board (Glassmorphism) ─── */
+    .texture-board {
+      height: 480px; position: relative;
+      background: linear-gradient(135deg, #e3ecf5 0%, #c8cfd8 100%);
+      border-top: var(--hairline); border-bottom: var(--hairline);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    /* 신비로운 아우라 효과 */
+    .aura {
+      position: absolute; width: 600px; height: 600px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+      top: -100px; left: -100px; filter: blur(40px);
+    }
+    /* 서리 낀 무광 유리(Frosted Glass) CSS 시뮬레이션 */
+    .glass-panel {
+      width: 320px; height: 400px; z-index: 2;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      box-shadow: 0 20px 50px rgba(30, 41, 59, 0.08);
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding: 32px;
+    }
+    .glass-label {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 0.3em;
+      color: var(--k-blue); margin-bottom: 8px; font-weight: 500;
+    }
+    .glass-value {
+      font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 300;
+      color: var(--k-slate); letter-spacing: 0.05em;
+    }
+
+    /* ─── The 3 Axes Grid ─── */
+    .grid-3 {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      position: relative; z-index: 10; background: #fff;
+    }
+    .grid-col {
+      padding: 80px 60px; border-right: var(--hairline); border-bottom: var(--hairline);
+    }
+    .grid-col:last-child { border-right: none; }
+    
+    .col-eng {
+      font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+      letter-spacing: 0.2em; color: var(--k-blue); display: block; margin-bottom: 16px;
+    }
+    .col-title {
+      font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 400;
+      color: var(--k-slate); margin-bottom: 24px; letter-spacing: -0.02em;
+    }
+    .col-desc {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 300;
+      color: var(--k-slate-light); line-height: 1.7; word-break: keep-all;
+    }
+
+    /* ─── L5 Sensory Quote ─── */
+    .quote-section {
+      padding: 120px 80px; text-align: center; background: #fafbfc; position: relative; z-index: 10;
+    }
+    .quote-mark {
+      font-family: 'Cormorant Garamond', serif; font-size: 80px; color: var(--k-silver);
+      line-height: 0.5; margin-bottom: 24px; font-style: italic; opacity: 0.5;
+    }
+    .quote-text {
+      font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 300;
+      line-height: 1.6; color: var(--k-slate); word-break: keep-all; letter-spacing: -0.02em;
+    }
+    .quote-text strong { font-weight: 500; color: var(--k-blue); }
+
+    /* ─── Clinical Palette & Material ─── */
+    .bottom-section {
+      display: grid; grid-template-columns: 1fr 1fr; border-top: var(--hairline);
+      background: #fff; position: relative; z-index: 10;
+    }
+    .b-col { padding: 80px 60px; border-right: var(--hairline); }
+    .b-col:last-child { border-right: none; }
+    
+    .b-title {
+      font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+      letter-spacing: 0.2em; color: var(--k-slate); text-transform: uppercase; margin-bottom: 48px;
+    }
+
+    /* Material List */
+    .mat-list { list-style: none; }
+    .mat-item { margin-bottom: 40px; }
+    .mat-item h4 {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 16px; font-weight: 500;
+      color: var(--k-slate); margin-bottom: 12px;
+    }
+    .mat-item p {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 14px; font-weight: 300;
+      color: var(--k-slate-light); line-height: 1.7; word-break: keep-all;
+    }
+
+    /* Elegant Color Palette */
+    .palette-row { display: flex; align-items: center; gap: 24px; margin-bottom: 24px; }
+    .color-chip {
+      width: 56px; height: 56px; border-radius: 50%;
+      box-shadow: inset 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .color-info { display: flex; flex-direction: column; gap: 4px; }
+    .color-hex {
+      font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; color: var(--k-slate); letter-spacing: 0.05em;
+    }
+    .color-name {
+      font-family: 'Noto Sans KR', sans-serif; font-size: 12px; font-weight: 300; color: var(--k-slate-light);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="brand-book">
+    <div class="grid-v"></div>
+    <div class="grid-h"></div>
+
+    <header>
+      <div class="logo">KISONA</div>
+      <div class="meta">Clinical Beauty Identity<br>Scalp Ampoule Guide</div>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow">Core Concept</div>
+      <h1 class="title-kr">선</h1>
+      <h2 class="title-en">The Line.</h2>
+      <p class="desc">
+        둥글게 타협하지 않는 차가운 이성.<br>
+        무너진 얼굴선을 두피에서부터 정밀하게 조여 올리는 가장 완벽하고 우아한 하이엔드 뷰티 프로토콜.
+      </p>
+    </section>
+
+    <section class="texture-board">
+      <div class="aura"></div>
+      <div class="glass-panel">
+        <div class="glass-label">TACTILE SENSATION</div>
+        <div class="glass-value">서리 낀 무광 유리</div>
+      </div>
+    </section>
+
+    <section class="grid-3">
+      <div class="grid-col">
+        <span class="col-eng">DATA LINE</span>
+        <h3 class="col-title">전문성의 선</h3>
+        <p class="col-desc">기초템의 과장을 배제합니다. 해비어트(IoT) 앱의 정밀한 측정과 우상향 데이터 그래프로 증명하는 피부과 시술급의 신뢰감을 용기의 미세한 눈금(Scale)으로 표현합니다.</p>
+      </div>
+      <div class="grid-col">
+        <span class="col-eng">CONTOUR LINE</span>
+        <h3 class="col-title">탄력의 선</h3>
+        <p class="col-desc">차가운 메탈 쿨링으로 두피 모공을 수축시켜, 중력에 무너진 얼굴의 윤곽(Edge)을 날렵하고 꼿꼿하게 당겨 올립니다.</p>
+      </div>
+      <div class="grid-col">
+        <span class="col-eng">ROUTINE LINE</span>
+        <h3 class="col-title">루틴의 선</h3>
+        <p class="col-desc">기존 생활의 궤도를 이탈하지 않습니다. 하루 5분, 자석처럼 정교하게 맞물리며 오차 없이 완성되는 이성적이고 우아한 습관.</p>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="quote-mark">"</div>
+      <div class="quote-text">
+        차가운 메탈이 두피를 스치는 순간,<br>
+        무너졌던 당신의 <strong>선</strong>이 서늘하게 제자리를 찾습니다.
+      </div>
+    </section>
+
+    <section class="bottom-section">
+      <div class="b-col">
+        <div class="b-title">Material & Shape</div>
+        <ul class="mat-list">
+          <li class="mat-item">
+            <h4>수직적 실루엣 (Vertical Form)</h4>
+            <p>귀여운 곡선을 배제합니다. 하이엔드 앰플처럼 수직으로 곧게 뻗은 미니멀한 실루엣이 '오차 없는 뷰티'를 대변합니다.</p>
+          </li>
+          <li class="mat-item">
+            <h4>프로스티드 글라스 & 메탈</h4>
+            <p>냉동실에서 꺼낸 듯한 서리 낀 반투명 바디(Frosted)와, 닿는 순간 강력한 냉감을 주는 브러시드 메탈 어플리케이터를 결합합니다.</p>
+          </li>
+          <li class="mat-item">
+            <h4>데이터 눈금선 (Micro Scale)</h4>
+            <p>화려한 장식 대신 1회 사용량을 뜻하는 미세한 눈금선을 각인하여 하이테크 전문성을 암시합니다.</p>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="b-col">
+        <div class="b-title">Clinical Palette</div>
+        <div class="palette-row">
+          <div class="color-chip" style="background: #5e81ac;"></div>
+          <div class="color-info">
+            <div class="color-hex">#5E81AC</div>
+            <div class="color-name">Muted Blue — 이성과 신뢰의 쿨링</div>
+          </div>
+        </div>
+        <div class="palette-row">
+          <div class="color-chip" style="background: #1e293b;"></div>
+          <div class="color-info">
+            <div class="color-hex">#1E293B</div>
+            <div class="color-name">Slate Gray — 우아한 무게감</div>
+          </div>
+        </div>
+        <div class="palette-row">
+          <div class="color-chip" style="background: #c8cfd8; border: 1px solid rgba(0,0,0,0.05);"></div>
+          <div class="color-info">
+            <div class="color-hex">#C8CFD8</div>
+            <div class="color-name">Metallic Silver — 프로페셔널 텍스처</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

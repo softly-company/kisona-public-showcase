@@ -48,7 +48,11 @@
       --silver-dark: #9ca3af;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     body {
       font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, sans-serif;
@@ -68,7 +72,7 @@
       display: flex;
       align-items: center;
       padding: 0 32px;
-      background: rgba(255,255,255,0.92);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--base-07);
     }
@@ -111,7 +115,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: radial-gradient(circle at 50% 40%, rgba(94,129,172,0.06) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 40%, rgba(94, 129, 172, 0.06) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -244,7 +248,7 @@
       border-radius: 12px;
       background: var(--white);
       border: 1px solid var(--base-10);
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .journey-step .js-num {
@@ -302,12 +306,12 @@
       padding: 28px 24px;
       text-align: center;
       transition: all 0.2s;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .rhythm-card:hover {
       border-color: var(--silver-base);
-      box-shadow: 0 6px 20px rgba(200,207,216,0.35);
+      box-shadow: 0 6px 20px rgba(200, 207, 216, 0.35);
     }
 
     .rhythm-card .rc-icon {
@@ -352,7 +356,7 @@
       border: 1px solid var(--base-10);
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .arch-card .ac-layer {
@@ -450,7 +454,7 @@
       background: var(--white);
       border: 1px solid var(--base-10);
       border-radius: 12px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .doubt-row .dr-q {
@@ -507,7 +511,7 @@
       background: var(--point-500);
       border-radius: 50%;
       border: 2px solid white;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
     }
 
     .tone-row .tr-label-end {
@@ -529,7 +533,7 @@
       border: 1px solid var(--base-10);
       border-radius: 12px;
       padding: 24px;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
     }
 
     .pattern-card .pc-type {
@@ -594,9 +598,17 @@
       margin-bottom: 12px;
     }
 
-    .words-do .wc-title { color: var(--point-700); }
-    .words-cond .wc-title { color: #7a5a3a; }
-    .words-dont .wc-title { color: var(--red-600); }
+    .words-do .wc-title {
+      color: var(--point-700);
+    }
+
+    .words-cond .wc-title {
+      color: #7a5a3a;
+    }
+
+    .words-dont .wc-title {
+      color: var(--red-600);
+    }
 
     .words-col .wc-list {
       list-style: none;
@@ -629,7 +641,7 @@
       text-align: center;
       border: 2px solid var(--silver-base);
       background: var(--white);
-      box-shadow: 0 2px 8px rgba(200,207,216,0.25);
+      box-shadow: 0 2px 8px rgba(200, 207, 216, 0.25);
     }
 
     .habit-node .hn-label {
@@ -742,7 +754,7 @@
       display: flex;
       justify-content: space-between;
       padding: 12px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
 
     .summary-row:last-child {
@@ -781,15 +793,45 @@
 
     /* ─── Responsive ─── */
     @media (max-width:768px) {
-      .purpose-inner { grid-template-columns: 1fr; gap: 16px; padding: 20px; }
-      .rhythm-grid { grid-template-columns: 1fr; }
-      .arch-grid { grid-template-columns: 1fr; }
-      .words-grid { grid-template-columns: 1fr; }
-      .doubt-row { grid-template-columns: 1fr; gap: 8px; }
-      .doubt-row .dr-arrow { transform: rotate(90deg); justify-self: center; }
-      .journey-flow { flex-direction: column; }
-      .journey-arrow { transform: rotate(90deg); }
-      .section { padding: 0 20px 48px; }
+      .purpose-inner {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 20px;
+      }
+
+      .rhythm-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .arch-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .words-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .doubt-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .doubt-row .dr-arrow {
+        transform: rotate(90deg);
+        justify-self: center;
+      }
+
+      .journey-flow {
+        flex-direction: column;
+      }
+
+      .journey-arrow {
+        transform: rotate(90deg);
+      }
+
+      .section {
+        padding: 0 20px 48px;
+      }
     }
   </style>
 </head>
@@ -806,7 +848,8 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-label">Brand Concept</div>
-    <img src="../05-assets/exports/logos/typo/KISONA_logo.svg" alt="KISONA" style="height:32px;opacity:0.15;margin-bottom:20px;">
+    <img src="../05-assets/exports/logos/typo/KISONA_logo.svg" alt="KISONA"
+      style="height:32px;opacity:0.15;margin-bottom:20px;">
     <div class="hero-word">습관</div>
     <p class="hero-sub">
       매일 쓰는 것이 나를 바꾼다.<br>
@@ -928,7 +971,11 @@
 
     <table class="msg-table">
       <thead>
-        <tr><th>Level</th><th>Message</th><th>Usage</th></tr>
+        <tr>
+          <th>Level</th>
+          <th>Message</th>
+          <th>Usage</th>
+        </tr>
       </thead>
       <tbody>
         <tr>
@@ -988,22 +1035,30 @@
     <div class="tone-grid">
       <div class="tone-row">
         <span class="tr-label">격식</span>
-        <div class="tr-bar"><div class="tr-dot" style="left:45%;"></div></div>
+        <div class="tr-bar">
+          <div class="tr-dot" style="left:45%;"></div>
+        </div>
         <span class="tr-label-end">캐주얼</span>
       </div>
       <div class="tone-row">
         <span class="tr-label">감성적</span>
-        <div class="tr-bar"><div class="tr-dot" style="left:50%;"></div></div>
+        <div class="tr-bar">
+          <div class="tr-dot" style="left:50%;"></div>
+        </div>
         <span class="tr-label-end">이성적</span>
       </div>
       <div class="tone-row">
         <span class="tr-label">자극적</span>
-        <div class="tr-bar"><div class="tr-dot" style="left:60%;"></div></div>
+        <div class="tr-bar">
+          <div class="tr-dot" style="left:60%;"></div>
+        </div>
         <span class="tr-label-end">절제</span>
       </div>
       <div class="tone-row">
         <span class="tr-label">화려한</span>
-        <div class="tr-bar"><div class="tr-dot" style="left:65%;"></div></div>
+        <div class="tr-bar">
+          <div class="tr-dot" style="left:65%;"></div>
+        </div>
         <span class="tr-label-end">담백한</span>
       </div>
     </div>
@@ -1120,11 +1175,14 @@
       <div class="si-title">Summary</div>
       <div class="summary-row"><span class="sr-key">Brand Essence</span><span class="sr-val">습관</span></div>
       <div class="summary-row"><span class="sr-key">Tagline</span><span class="sr-val">매일 달라지는 나를 만나다</span></div>
-      <div class="summary-row"><span class="sr-key">Brand Promise</span><span class="sr-val">실제로 달라지는 것만 약속합니다</span></div>
+      <div class="summary-row"><span class="sr-key">Brand Promise</span><span class="sr-val">실제로 달라지는 것만 약속합니다</span>
+      </div>
       <div class="summary-row"><span class="sr-key">Journey</span><span class="sr-val">멈춤 → 만남 → 습관 → 달라짐</span></div>
-      <div class="summary-row"><span class="sr-key">Product Concept</span><span class="sr-val">Real Difference</span></div>
+      <div class="summary-row"><span class="sr-key">Product Concept</span><span class="sr-val">Real Difference</span>
+      </div>
       <div class="summary-row"><span class="sr-key">Tone</span><span class="sr-val">담백한 확신</span></div>
-      <div class="summary-row"><span class="sr-key">Habit Loop</span><span class="sr-val">Cue → Action → Reward ↻</span></div>
+      <div class="summary-row"><span class="sr-key">Habit Loop</span><span class="sr-val">Cue → Action → Reward ↻</span>
+      </div>
       <div class="summary-row"><span class="sr-key">Category</span><span class="sr-val">홈케어</span></div>
     </div>
   </div>
